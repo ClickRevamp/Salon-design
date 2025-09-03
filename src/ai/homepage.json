@@ -1,0 +1,115 @@
+{
+    "seo": {
+      "title": { "lv": "Lash Bloom Studio — Premium skropstu pieaudzēšana Rīgā" },
+      "description": { "lv": "Profesionāla skropstu pieaudzēšana un uzacu kopšana Rīgas centrā. Sterili, higiēniski un ar luksusa pieeju." }
+    },
+    "hero": {
+      "eyebrow": { "lv": "Premium Lash Studio" },
+      "headline": { "lv": "Izcel savu dabisko skaistumu ar profesionālu skropstu dizainu" },
+      "subheadline": { "lv": "Sterila vide, sertificēti speciālisti un eleganta pieredze Rīgas sirdī." },
+      "primaryCta": { "lv": "Pierakstīties", "href": "/rezervacija" },
+      "secondaryCta": { "lv": "Uzzināt vairāk", "href": "/par-mums" },
+      "trustChips": [
+        { "lv": "Sertificēti meistari" },
+        { "lv": "Higiēna un drošība" },
+        { "lv": "1000+ laimīgi klienti" }
+      ],
+      "media": {
+        "type": "image",
+        "src": "/images/hero/studio_model.jpg",
+        "alt": { "lv": "Elegants skropstu dizains Lash Bloom Studio" }
+      }
+    },
+    "badges": [
+      { "title": { "lv": "Sterile & Hygienic" }, "desc": { "lv": "Medicīnas klases sanitārija" }, "icon": "Shield" },
+      { "title": { "lv": "Certified Technicians" }, "desc": { "lv": "Profesionāli apmācīti meistari" }, "icon": "BadgeCheck" },
+      { "title": { "lv": "Prime Location" }, "desc": { "lv": "Rīgas centrs, viegla piekļuve" }, "icon": "MapPin" },
+      { "title": { "lv": "1000+ Happy Clients" }, "desc": { "lv": "5★ atsauksmju vērtējums" }, "icon": "Star" }
+    ],
+    "services": {
+      "tabs": [
+        {
+          "slug": "skropstas",
+          "label": { "lv": "Skropstas" },
+          "items": [
+            { "name": { "lv": "Klasiskās skropstas" }, "time": "2–2.5h", "price": 45, "popular": true, "excerpt": { "lv": "Dabisks, elegants izskats." } },
+            { "name": { "lv": "Hibrīdā skropstu pieaudzēšana" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Balanss starp klasiku un apjomu." } },
+            { "name": { "lv": "Apjoma skropstas" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Dramatisks un pamanāms efekts." } },
+            { "name": { "lv": "Mega apjoma skropstas" }, "time": "3–3.5h", "price": 55, "excerpt": { "lv": "Maksimāls blīvums svētkiem." } },
+            { "name": { "lv": "Skropstu pacēlums" }, "time": "1.5h", "price": 35, "excerpt": { "lv": "Dabisks pacēlums bez pieaudzēšanas." } },
+            { "name": { "lv": "Papildināšana" }, "time": "1.5–2h", "price": 30, "excerpt": { "lv": "Perfektas līnijas ikdienai." } }
+          ]
+        },
+        {
+          "slug": "uzacis",
+          "label": { "lv": "Uzacis" },
+          "items": [
+            { "name": { "lv": "Laminēšana" }, "time": "1–1.5h", "price": 35, "excerpt": { "lv": "Kārtīgas, viegli ieveidojamas uzacis." } },
+            { "name": { "lv": "Krāsošana & formēšana" }, "time": "45min", "price": 20, "excerpt": { "lv": "Tonēšana un precīza forma." } }
+          ]
+        }
+      ],
+      "cta": { "lv": "Apskatīt pilnu cenrādi", "href": "/pakalpojumi" }
+    },
+    "signatureBanner": {
+      "title": { "lv": "Holistiska pieeja skaistumam" },
+      "desc": { "lv": "Mēs pievēršam uzmanību katrai detaļai — no konsultācijas līdz pēcaprūpei." },
+      "image": "/images/banners/holistic.jpg",
+      "chip": { "lv": "Skin Care" }
+    },
+    "priceHighlights": {
+      "title": { "lv": "Populārākie piedāvājumi" },
+      "items": [
+        { "name": { "lv": "Klasiskās skropstas" }, "time": "2–2.5h", "price": 45 },
+        { "name": { "lv": "Hibrīdā pieaudzēšana" }, "time": "2.5–3h", "price": 50 },
+        { "name": { "lv": "Apjoma skropstas" }, "time": "2.5–3h", "price": 50 }
+      ],
+      "cta": { "lv": "Rezervēt laiku", "href": "/rezervacija" }
+    },
+    "reels": {
+      "title": { "lv": "Jaunākie Reels no Instagram" },
+      "note": { "lv": "Ieslēdziet skaņu, lai dzirdētu padomus un procesu." },
+      "items": [
+        {
+          "url": "https://www.instagram.com/reel/REEL_ID_1/",
+          "thumbnail": "/images/reels/reel1.jpg",
+          "caption": { "lv": "Klasiskā pieaudzēšana — dabiskam izskatam" }
+        },
+        {
+          "url": "https://www.instagram.com/reel/REEL_ID_2/",
+          "thumbnail": "/images/reels/reel2.jpg",
+          "caption": { "lv": "Higiēnas protokols studijā" }
+        },
+        {
+          "url": "https://www.instagram.com/reel/REEL_ID_3/",
+          "thumbnail": "/images/reels/reel3.jpg",
+          "caption": { "lv": "Pirms / Pēc: apjoma efekts" }
+        },
+        {
+          "url": "https://www.instagram.com/reel/REEL_ID_4/",
+          "thumbnail": "/images/reels/reel4.jpg",
+          "caption": { "lv": "Uzacu laminēšana — dabīgi un glīti" }
+        }
+      ]
+    },
+    "reviews": {
+      "title": { "lv": "Ko saka mūsu klienti" },
+      "items": [
+        { "name": "Ļena", "rating": 5, "text": { "lv": "Perfekts rezultāts un patīkama atmosfēra. Vienmēr atgriežos!" } },
+        { "name": "Agnese", "rating": 5, "text": { "lv": "Sterili, rūpīgi un ļoti skaists dizains." } },
+        { "name": "Marta", "rating": 5, "text": { "lv": "Īsta luksusa pieredze. Meistare — top!" } }
+      ]
+    },
+    "faq": [
+      { "q": { "lv": "Cik ilgi noturas skropstas?" }, "a": { "lv": "Vidēji 3–4 nedēļas, ieteicama papildināšana pēc 2–3 nedēļām." } },
+      { "q": { "lv": "Kā sagatavoties vizītei?" }, "a": { "lv": "Nāciet bez kosmētikas, īpaši bez tušas. Lūdzu, nenāciet ar kontaktlēcām." } },
+      { "q": { "lv": "Vai pieejami dāvanu kartes?" }, "a": { "lv": "Jā, digitāli un drukāti varianti." } }
+    ],
+    "cta": {
+      "headline": { "lv": "Gatavi pārvērst savu izskatu?" },
+      "sub": { "lv": "Pierakstieties uz vizīti šodien un izbaudiet luksusa skropstu mākslu." },
+      "primaryCta": { "lv": "Pierakstīties tagad", "href": "/rezervacija" },
+      "secondaryCta": { "lv": "Zvanīt", "href": "tel:+37120123456" }
+    }
+  }
+  

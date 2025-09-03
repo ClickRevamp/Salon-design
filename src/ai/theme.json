@@ -1,0 +1,41 @@
+{
+    "name": "lash-bloom-theme",
+    "colors": {
+      "bg": "#FAF7F5",
+      "surface": "#FFFFFF",
+      "ink": "#1B1B1B",
+      "subtle": "#6B625C",
+      "accent": "#E6CBA8",
+      "blush": "#EED9D0",
+      "mocha": "#B2836B",
+      "success": "#3BB273",
+      "error": "#D95E5E"
+    },
+    "radii": {
+      "card": "1.5rem",
+      "chip": "9999px",
+      "img": "1.25rem"
+    },
+    "shadows": {
+      "card": "0 8px 30px rgba(26,26,26,0.06)",
+      "elevated": "0 12px 48px rgba(26,26,26,0.10)"
+    },
+    "gradients": {
+      "hero": "radial-gradient(1200px 600px at 80% 10%, rgba(230,203,168,0.25), transparent 60%), radial-gradient(900px 500px at 10% 20%, rgba(238,217,208,0.45), transparent 60%)",
+      "cta": "linear-gradient(180deg, #E6CBA8 0%, #EED9D0 100%)"
+    },
+    "effects": {
+      "noiseOpacity": 0.04,
+      "border": "1px solid rgba(0,0,0,0.05)"
+    },
+    "typography": {
+      "heading": "Cormorant Garamond",
+      "body": "Inter",
+      "scale": {
+        "h1": "clamp(36px, 5vw, 64px)",
+        "h2": "clamp(28px, 3.5vw, 40px)",
+        "lead": "clamp(16px, 2vw, 20px)"
+      }
+    }
+  }
+  

@@ -2,17 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------- Base tokens ---------- */
 @layer base {
   :root {
-    /* Brand color system */
-    --brand-bg: #FAF8F7;
-    --brand-text: #1C1A1A;
-    --brand-accent: #CFB27C;
-    
-    /* Grain background texture */
+    /* Salon theme (used by our sections) */
+    --bg: #FAF7F5;
+    --surface: #FFFFFF;
+    --ink: #1B1B1B;
+    --subtle: #6B625C;
+    --accent: #E6CBA8;   /* champagne */
+    --blush: #EED9D0;    /* blush/nude */
+    --mocha: #B2836B;
+
+    /* Back-compat brand vars (map to theme) */
+    --brand-bg: var(--bg);
+    --brand-text: var(--ink);
+    --brand-accent: var(--accent);
+
+    /* Grain / noise */
     --grain-bg: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
-    
-    /* shadcn/ui design system */
+
+    /* shadcn/ui tokens (unchanged) */
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -25,7 +35,7 @@
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
+    --accent-hsl: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
@@ -33,6 +43,7 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
     --radius: 0.5rem;
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
@@ -53,7 +64,7 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 14.9%;
     --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+    --accent-hsl: 0 0% 14.9%;
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
@@ -66,35 +77,74 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-}
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  
-  html {
-    @apply bg-brand-bg text-brand-text;
-  }
-  
-  body {
-    @apply bg-brand-bg text-brand-text;
+  /* Base element styling */
+  * { @apply border-border; }
+
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
   }
 }
 
+/* ---------- Reusable utilities ---------- */
 @layer utilities {
+  /* subtle grain background as a class */
   .bg-grain {
     background-image: var(--grain-bg);
+    background-size: auto;
+    background-repeat: repeat;
   }
-}
 
-
-
-@layer base {
-  * {
-    @apply border-border;
+  /* overlay version for sections (use with absolute inset-0) */
+  .noise {
+    background-image: var(--grain-bg);
+    opacity: .04;
+    pointer-events: none;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .soft-card {
+    background: var(--surface);
+    border: 1px solid rgba(0,0,0,.05);
+    border-radius: 1.5rem; /* ~rounded-3xl */
+    box-shadow: 0 8px 30px rgba(26,26,26,.06);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .375rem .75rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(0,0,0,.06);
+    background: #fff;
+    color: var(--subtle);
+    font-size: .85rem;
+    line-height: 1;
+  }
+
+  .btn-primary {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: .75rem 1.1rem; border-radius: 9999px;
+    background: linear-gradient(180deg, var(--accent) 0%, var(--blush) 100%);
+    color: var(--ink); font-weight: 600;
+    border: 1px solid rgba(0,0,0,.08);
+    transition: transform .15s ease-out, box-shadow .15s ease-out;
+  }
+  .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(26,26,26,.12); }
+
+  .btn-ghost {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: .75rem 1.1rem; border-radius: 9999px;
+    background: #fff; color: var(--ink);
+    border: 1px solid rgba(0,0,0,.10);
+    transition: background-color .15s ease-out, transform .15s ease-out;
+  }
+  .btn-ghost:hover { transform: translateY(-1px); background: #fff; }
+
+  .btn-link {
+    color: var(--mocha);
+    font-weight: 600;
+    text-underline-offset: 3px;
   }
 }

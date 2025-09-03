@@ -1,10 +1,11 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
+import type { CSSProperties } from 'react';
 
-// ✅ JSON content + theme (use the @ai/* alias you added in tsconfig)
-import theme from '@ai/theme.json';
-import home from '@ai/homepage.json';
+// ✅ JSON content + theme (from src/ai via @/*)
+import theme from '@/ai/theme.json';
+import home from '@/ai/homepage.json';
 
 // Existing components
 import Hero from '@/components/Hero';
@@ -36,14 +37,14 @@ export default function Home() {
   }));
 
   // Expose theme colors as CSS custom props
-  const cssVars: React.CSSProperties = {
-    ['--bg' as any]: (theme as any).colors.bg,
+  const cssVars: CSSProperties = {
+    ['--bg' as any]:   (theme as any).colors.bg,
     ['--surface' as any]: (theme as any).colors.surface,
-    ['--ink' as any]: (theme as any).colors.ink,
+    ['--ink' as any]:  (theme as any).colors.ink,
     ['--subtle' as any]: (theme as any).colors.subtle,
     ['--accent' as any]: (theme as any).colors.accent,
-    ['--blush' as any]: (theme as any).colors.blush,
-    ['--mocha' as any]: (theme as any).colors.mocha
+    ['--blush' as any]:  (theme as any).colors.blush,
+    ['--mocha' as any]:  (theme as any).colors.mocha
   };
 
   return (

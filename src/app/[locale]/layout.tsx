@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { Fraunces, Manrope } from "next/font/google";
 import { Toaster } from 'sonner';
-import { defaultMetadata } from '@/seo.config';
+import { defaultMetadata, viewport } from '@/seo.config';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import "../globals.css";
@@ -22,6 +22,7 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = defaultMetadata;
+export { viewport };
 
 export default async function LocaleLayout({
   children,
@@ -30,14 +31,16 @@ export default async function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  // Providing all messages to the client
-  // side is the easiest way to get started
+  // Enable static rendering
+  unstable_setRequestLocale(locale);
+  
+  // Load messages using next-intl
   const messages = await getMessages();
 
   return (
     <html lang={locale} className={`${fraunces.variable} ${manrope.variable}`}>
       <body className="font-sans antialiased">
-        <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">

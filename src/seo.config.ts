@@ -1,4 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#CFB27C',
+};
 
 export const defaultMetadata: Metadata = {
   title: {
@@ -44,19 +50,9 @@ export const defaultMetadata: Metadata = {
     description: 'Professional lash extensions and premium beauty services in Latvia.',
     images: ['/og-image.jpg'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-  themeColor: '#CFB27C',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
     title: 'Lash Bloom Studio',
   },
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
-  manifest: '/manifest.json',
 };

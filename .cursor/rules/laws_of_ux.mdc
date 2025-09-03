@@ -1,0 +1,294 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# 🧠 Laws of UX – ClickRevamp Design Brain
+
+A curated collection of foundational UX principles to guide UI design, onboarding, structure, and user psychology. Use these laws when designing new components, improving flows, or debugging friction points.
+
+---
+
+## 📜 INDEX
+
+- Hick’s Law
+- Jakob’s Law
+- Law of Common Region
+- Law of Proximity
+- Law of Prägnanz
+- Law of Similarity
+- Law of Uniform Connectedness
+- Mental Models
+- Miller’s Law
+- Occam’s Razor
+- Paradox of the Active User
+- Pareto Principle
+- Parkinson’s Law
+- Peak-End Rule
+- Postel’s Law
+- Selective Attention
+- Serial Position Effect
+- Tesler’s Law
+- Von Restorff Effect
+- Working Memory
+- Zeigarnik Effect
+
+---
+
+## 🎯 1. Hick’s Law
+
+> The time it takes to make a decision increases with the number and complexity of choices.
+
+**Takeaways**
+- Minimize choices when speed is critical.
+- Break complex tasks into smaller steps.
+- Highlight recommended options.
+- Use progressive onboarding.
+- Don’t oversimplify to the point of confusion.
+
+**Examples**
+- Google homepage (minimal input distraction)
+- Apple TV remote (simple interface)
+- Slack onboarding (gradual reveal)
+
+---
+
+## 🎯 2. Jakob’s Law
+
+> Users spend most of their time on other sites — so they expect your site to behave similarly.
+
+**Takeaways**
+- Meet user expectations from similar products.
+- Reuse mental models to lower cognitive load.
+- Ease transition with familiar UX after redesigns.
+
+**Examples**
+- Form controls mimic real-world toggles
+- YouTube redesign gave option to revert
+
+---
+
+## 🎯 3. Law of Common Region
+
+> Elements grouped within a clear boundary are perceived as related.
+
+**Takeaways**
+- Use borders or backgrounds to group content.
+- Makes page structure easier to scan.
+- Creates clarity in dense interfaces.
+
+---
+
+## 🎯 4. Law of Proximity
+
+> Objects near each other are perceived as a group.
+
+**Takeaways**
+- Place related info close together.
+- Space can signal functionality or hierarchy.
+- Improves scannability.
+
+**Example**
+- Google Search Results
+
+---
+
+## 🎯 5. Law of Prägnanz
+
+> We interpret complex images in the simplest way possible.
+
+**Takeaways**
+- The brain simplifies complex visuals.
+- We prefer clear, unified shapes.
+- Useful for designing icons and layouts.
+
+---
+
+## 🎯 6. Law of Similarity
+
+> Visually similar elements are perceived as related.
+
+**Takeaways**
+- Match color/shape/size for functionality.
+- Ensure buttons look distinct from text.
+- Reuse visual patterns for clarity.
+
+---
+
+## 🎯 7. Law of Uniform Connectedness
+
+> Visually connected elements are perceived as more related.
+
+**Takeaways**
+- Use connecting lines or shapes to show grouping.
+- Tangible cues (arrows, backgrounds) improve scanning.
+- Useful in card designs, step flows, menus.
+
+**Example**
+- Google featured snippets box
+
+---
+
+## 🎯 8. Mental Model
+
+> A user’s internal model of how something works.
+
+**Takeaways**
+- Align design with user expectations.
+- Familiar flows reduce friction.
+- Conduct research to uncover user assumptions.
+
+---
+
+## 🎯 9. Miller’s Law
+
+> People can only hold 7±2 items in working memory.
+
+**Takeaways**
+- Don’t overload with too many options.
+- Use chunking to group data.
+- Recognize memory varies by context.
+
+**Example**
+- Chunked layout in Bloomberg UI
+
+---
+
+## 🎯 10. Occam’s Razor
+
+> The simplest solution that works is best.
+
+**Takeaways**
+- Avoid unnecessary complexity.
+- Trim features that don’t add value.
+- Default to simplicity when in doubt.
+
+---
+
+## 🎯 11. Paradox of the Active User
+
+> Users don’t read manuals. They dive in.
+
+**Takeaways**
+- Make onboarding contextual.
+- Support learning as users explore.
+- Use tooltips, hints, and empty state guidance.
+
+---
+
+## 🎯 12. Pareto Principle (80/20 Rule)
+
+> 80% of results come from 20% of inputs.
+
+**Takeaways**
+- Focus efforts where it matters most.
+- Prioritize high-impact features.
+- Don’t try to optimize everything equally.
+
+---
+
+## 🎯 13. Parkinson’s Law
+
+> Work expands to fill the available time.
+
+**Takeaways**
+- Set realistic time constraints.
+- Use autofill and defaults to reduce effort.
+- Design forms and flows to encourage speed.
+
+---
+
+## 🎯 14. Peak-End Rule
+
+> People judge an experience by its peak and end moments.
+
+**Takeaways**
+- Delight users at key moments.
+- End on a positive note (confirmation, animation).
+- Negative moments are remembered more vividly.
+
+**Examples**
+- Mailchimp "High Five"
+- Uber wait experience
+
+---
+
+## 🎯 15. Postel’s Law
+
+> Be liberal in what you accept, strict in what you send.
+
+**Takeaways**
+- Accept varied input styles (e.g. phone formatting).
+- Tolerate user mistakes.
+- Give clear feedback and define rules without being rigid.
+
+---
+
+## 🎯 16. Selective Attention
+
+> People focus only on what’s relevant to their goal.
+
+**Takeaways**
+- Guide focus visually.
+- Avoid ad-like designs for important content.
+- Beware of “change blindness.”
+
+---
+
+## 🎯 17. Serial Position Effect
+
+> First and last items are remembered best.
+
+**Takeaways**
+- Place CTAs at the start or end.
+- Group minor options in the middle.
+- Useful in menus, lists, onboarding steps.
+
+---
+
+## 🎯 18. Tesler’s Law
+
+> Every system has an irreducible complexity.
+
+**Takeaways**
+- Shift complexity from user to system where possible.
+- Don’t design only for “ideal” users.
+- Build in-context help and tooltips.
+
+---
+
+## 🎯 19. Von Restorff Effect (Isolation Effect)
+
+> The item that stands out is remembered best.
+
+**Takeaways**
+- Make key CTAs visually distinct.
+- Avoid overusing emphasis — only highlight what matters.
+- Don’t rely on color alone (a11y!).
+
+---
+
+## 🎯 20. Working Memory
+
+> Temporary memory that handles tasks in the moment.
+
+**Takeaways**
+- Limit steps/screens requiring memory.
+- Use visual breadcrumbs and visited link styles.
+- Offload memory to UI (e.g. persistent filters).
+
+---
+
+## 🎯 21. Zeigarnik Effect
+
+> Unfinished tasks are remembered better.
+
+**Takeaways**
+- Show progress bars to motivate completion.
+- Prompt users to return or continue.
+- Create curiosity with partial reveals.
+
+---
+
+✅ **Usage Tip:** Before shipping a UI component or flow, scan this file and test against 2–3 relevant laws.
+

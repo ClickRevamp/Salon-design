@@ -1,0 +1,213 @@
+---
+description: Lash Bloom Studio brand and design system guidelines for consistent visual identity
+alwaysApply: true
+---
+
+# 🎨 Lash Bloom Studio Styleguide
+
+## ✨ Brand Voice & Personality
+
+**Premium • Elegant • Trustworthy • Feminine**
+
+- **Tone**: Professional yet warm, confident but approachable
+- **Language**: Clear, direct, no jargon. Use Latvian primarily, with Russian/English support
+- **Approach**: Focus on transformation, self-care, and confidence
+- **Avoid**: Aggressive sales language, technical beauty terminology, rushed communication
+
+## 🎯 Typography Rules
+
+### Font Hierarchy
+- **Headlines**: Fraunces serif (`font-serif`) - Emotional, elegant, attention-grabbing
+- **UI/Body**: Manrope sans (`font-sans`) - Clean, readable, functional
+- **Never**: Mix serif in UI elements or sans in display headlines
+
+### Size Scale
+```css
+H1: text-4xl md:text-5xl (hero sections)
+H2: text-3xl md:text-4xl (page sections)  
+H3: text-2xl md:text-3xl (subsections)
+H4: text-xl md:text-2xl (component titles)
+Body Large: text-xl (introductions)
+Body: text-base (default reading)
+Small: text-sm (captions, meta)
+```
+
+### Line Height
+- **Headlines**: `leading-tight` (1.2x) for impact
+- **Body**: `leading-relaxed` (1.625x) for readability
+- **UI**: `leading-normal` (1.5x) for interface elements
+
+## 🎨 Color Usage
+
+### Primary Palette
+```scss
+--brand-bg: #FAF8F7 (porcelain)
+--brand-text: #1C1A1A (ink)  
+--brand-accent: #CFB27C (gold)
+```
+
+### Supporting Colors
+```scss
+--blush: #EEDDE2 (highlights, backgrounds)
+--mauve: #D9C2C8 (borders, subtle accents)
+```
+
+### Usage Rules
+- **Gold**: CTAs, active states, icons, hover effects
+- **Ink**: Primary text, borders in high contrast
+- **Porcelain**: Main backgrounds, card backgrounds
+- **Blush**: Soft backgrounds, gentle highlights
+- **Mauve**: Borders, subtle separators, disabled states
+
+### ❌ Color Don'ts
+- No blue gradients (conflicts with brand warmth)
+- No hard-coded hex values in components
+- No pure black (#000) or pure white (#FFF)
+- No neon or saturated colors
+
+## 📐 Spacing Rhythm
+
+### Base Scale: 8px Unit System
+```scss
+xs: 4px   (0.5 unit)
+sm: 8px   (1 unit)  
+md: 16px  (2 units)
+lg: 24px  (3 units) ⭐ Primary
+xl: 32px  (4 units) ⭐ Primary  
+2xl: 40px (5 units) ⭐ Primary
+```
+
+### Section Spacing
+- **Tight**: `py-8 md:py-12` (32px/48px)
+- **Normal**: `py-12 md:py-16` (48px/64px)
+- **Generous**: `py-16 md:py-20` (64px/80px) ⭐ Preferred
+- **Hero**: `py-20 md:py-24` (80px/96px)
+- **Extra**: `py-24 md:py-32` (96px/128px)
+
+### Component Spacing
+- **Cards**: `p-6` or `p-8` internal padding
+- **Buttons**: `px-8 py-6` for large, `px-6 py-3` for default
+- **Form fields**: `mb-6` between fields
+- **Grid gaps**: `gap-6` or `gap-8` standard
+
+## 🎭 Motion Guidelines
+
+### Animation Timing
+- **Content entrance**: 240ms (0.24s)
+- **Stagger delay**: 60ms (0.06s)
+- **Hover effects**: 200ms (0.2s)
+- **Micro-interactions**: 150ms (0.15s)
+
+### Easing
+- **Content**: `ease-out` for natural feeling
+- **Hover**: `ease` for responsiveness
+- **Complex**: `cubic-bezier(0.4, 0, 0.2, 1)`
+
+### Animation Patterns
+```javascript
+// Entry Animation
+fadeInUp: {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.24, ease: "easeOut" }
+}
+
+// Hover Scale
+whileHover: { scale: 1.02 }
+transition: { duration: 0.2 }
+
+// Stagger Container
+staggerChildren: 0.06
+```
+
+### Motion Rules
+- ✅ Respect `prefers-reduced-motion`
+- ✅ Use for feedback and delight
+- ❌ Never animate purely for decoration
+- ❌ No animations over 500ms without user control
+
+## ♿ Accessibility Checklist
+
+### Color & Contrast
+- [ ] 4.5:1 contrast for normal text
+- [ ] 3:1 contrast for large text (18pt+)
+- [ ] Never rely on color alone for meaning
+- [ ] Test with color blindness simulators
+
+### Typography
+- [ ] Minimum 16px base font size
+- [ ] Maximum line length 75 characters
+- [ ] Sufficient line spacing (1.5x minimum)
+- [ ] Clear heading hierarchy (H1→H6)
+
+### Interaction
+- [ ] All interactive elements keyboard accessible
+- [ ] Focus indicators visible and clear
+- [ ] Touch targets minimum 44px
+- [ ] ARIA labels on icon buttons
+
+### Structure
+- [ ] Semantic HTML elements (`<main>`, `<section>`, `<article>`)
+- [ ] Proper heading structure (no skipped levels)
+- [ ] Alt text for all images
+- [ ] Form labels properly associated
+
+## 📸 Imagery Guidance
+
+### Photography Style
+- **Mood**: Soft, natural lighting with warm tones
+- **Composition**: Clean, uncluttered, focus on eyes/lashes
+- **Color grading**: Warm highlights, avoid cool blues
+- **Models**: Diverse representation, authentic expressions
+
+### Technical Requirements
+- **Format**: WebP with JPEG fallback
+- **Optimization**: Next.js Image component always
+- **Responsive**: Multiple sizes for different viewports
+- **Lazy loading**: Default behavior for performance
+
+### Placeholder Strategy
+- **Development**: Use `bg-grain bg-porcelain` for image placeholders
+- **Loading**: Skeleton components while images load
+- **Fallback**: Graceful degradation if images fail
+
+## ✅ Design Do's & Don'ts
+
+### ✅ DO
+- Use serif fonts for emotional headlines
+- Maintain generous whitespace for luxury feel
+- Keep interactions subtle and refined
+- Use gold sparingly for maximum impact
+- Design mobile-first, enhance for desktop
+- Test with real content, not Lorem Ipsum
+- Follow 8px spacing grid consistently
+- Use shadcn/ui components as foundation
+
+### ❌ DON'T
+- Mix serif and sans inappropriately
+- Use harsh drop shadows or heavy borders
+- Overcrowd interfaces with too many elements
+- Use animations longer than 300ms for UI
+- Create custom components when shadcn exists
+- Use blue colors (conflicts with brand)
+- Hard-code colors or spacing values
+- Ignore mobile experience
+
+## 🎯 Brand Application
+
+### Logo Usage
+- Minimum clear space: 2x the height of the text
+- Never stretch, skew, or alter proportions
+- Use on high contrast backgrounds only
+- Maintain readability at all sizes
+
+### Voice Applications
+- **Headers**: Confident, clear benefit statements
+- **CTAs**: Action-oriented, urgency without pressure  
+- **Descriptions**: Features + benefits, focus on transformation
+- **Forms**: Clear instructions, encouraging tone
+
+---
+
+💡 **Reference**: See `/styleguide` page for live component examples
+🔧 **Updates**: Modify this file when brand guidelines evolve

@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Sākums",
+    "about": "Par mums",
+    "services": "Pakalpojumi",
+    "booking": "Pieraksts",
+    "contact": "Kontakti"
+  },
+  "hero": {
+    "title": "Lash Bloom Studio",
+    "subtitle": "Premium skropstu pagarināšana, kas izceļ jūsu dabisko skaistumu",
+    "description": "Izjūtiet profesionālas skropstu dizaina mākslu Rīgas sirdī",
+    "cta": "Pierakstīties",
+    "secondary": "Uzzināt vairāk",
+    "features": "Profesionāli • Higiēniski • Luksusi"
+  },
+  "contact": {
+    "title": "Sazināties ar mums",
+    "description": "Uzdodiet jautājumu vai piesakieties konsultācijai",
+    "form": {
+      "name": "Vārds",
+      "namePlaceholder": "Jūsu vārds",
+      "email": "E-pasts",
+      "emailPlaceholder": "jusu@epasts.lv",
+      "message": "Ziņojums",
+      "messagePlaceholder": "Jūsu ziņojums vai jautājums...",
+      "submit": "Nosūtīt ziņojumu",
+      "sending": "Nosūta...",
+      "success": "Ziņojums nosūtīts!",
+      "successMessage": "Paldies par jūsu ziņojumu. Mēs sazināsimies ar jums tuvākajā laikā.",
+      "sendAnother": "Nosūtīt citu ziņojumu",
+      "privacyNote": "Nosūtot šo formu, jūs piekrītat mūsu privātuma politikai.",
+      "errorGeneric": "Lūdzu, izlabojiet kļūdas formā",
+      "errorSubmit": "Neizdevās nosūtīt ziņojumu. Lūdzu, mēģiniet vēlāk."
+    },
+    "validation": {
+      "nameRequired": "Vārds ir obligāts",
+      "nameMin": "Vārds jābūt vismaz 2 simboli",
+      "nameMax": "Vārds nedrīkst būt garāks par 100 simboliem",
+      "emailRequired": "E-pasts ir obligāts",
+      "emailInvalid": "Nederīga e-pasta adrese",
+      "messageRequired": "Ziņojums ir obligāts",
+      "messageMin": "Ziņojums jābūt vismaz 10 simboli",
+      "messageMax": "Ziņojums nedrīkst būt garāks par 1000 simboliem"
+    },
+    "info": {
+      "address": "Adrese",
+      "phone": "Tālrunis",
+      "email": "E-pasts",
+      "hours": "Darba laiks",
+      "follow": "Sekojiet mums",
+      "sendMessage": "Sūtiet mums ziņu",
+      "responseTime": "Vai jums ir jautājumi? Rakstiet mums, un mēs atbildēsim 24 stundu laikā."
+    }
+  },
+  "cta": {
+    "title": "Gatavi pārvērst savu izskatu?",
+    "subtitle": "Pierakstieties uz vizīti jau šodien un izbaudiet luksus skropstu mākslu",
+    "book": "Pierakstīties tagad"
+  },
+  "trust": {
+    "hygiene": "Augsta higiēna",
+    "certified": "Sertificēti speciālisti",
+    "location": "Ērta atrašanās vieta",
+    "clients": "1000+ apmierināti klienti"
+  },
+  "footer": {
+    "contact": "Kontakti",
+    "hours": "Darba laiks", 
+    "links": "Saites",
+    "weekdays": "10:00 - 19:00",
+    "saturday": "10:00 - 17:00",
+    "sunday": "Slēgts",
+    "copyright": "© 2024 Lash Bloom Studio. Visas tiesības aizsargātas."
+  },
+  "pages": {
+    "home": {
+      "servicesTitle": "Mūsu pakalpojumi",
+      "servicesDescription": "Profesionāli skaistumkopšanas pakalpojumi ar individuālu pieeju katram klientam."
+    },
+    "about": {
+      "title": "Par mums",
+      "description": "Mēs esam profesionālu skaistumkopšanas speciālistu komanda, kas specializējas premium skropstu pagarināšanā un uzacu veidošanā Rīgas sirdī."
+    },
+    "services": {
+      "title": "Pakalpojumi un cenas",
+      "description": "Apskatiet mūsu pilno pakalpojumu klāstu un cenas. Profesionāla pieeja katram klientam.",
+      "comingSoon": "Pakalpojumi šajā kategorijā tiks pievienoti drīzumā.",
+      "policies": "• Rezervācijas var atcelt bez maksas līdz 24 stundām pirms vizītes"
+    },
+    "contact": {
+      "title": "Kontakti",
+      "description": "Mēs vienmēr esam gatavi atbildēt uz jūsu jautājumiem un palīdzēt izvēlēties piemērotāko pakalpojumu.",
+      "getInTouch": "Sazinaties ar mums",
+      "sendMessage": "Sūtiet mums ziņu",
+      "mapPlaceholder": "Google Maps integrācija\n(pievienot vēlāk)"
+    }
+  },
+  "business": {
+    "name": "Lash Bloom Studio",
+    "tagline": "Premium lash extensions and beauty services in the heart of Riga.",
+    "address": "Brīvības iela 123",
+    "city": "Rīga, LV-1001",
+    "country": "Latvija",
+    "phone": "+371 20 123 456",
+    "email": "info@lashbloomstudio.com",
+    "hours": {
+      "weekdays": "Pirmdiena - Piektdiena: 10:00 - 19:00",
+      "saturday": "Sestdiena: 10:00 - 17:00",
+      "sunday": "Svētdiena: Slēgts"
+    }
+  },
+  "booking": {
+    "steps": {
+      "title": "Rezervācija",
+      "description": "Rezervējiet savu vizīti dažos vienkāršos soļos. Izvēlieties pakalpojumu, meistaru un piemērotu laiku.",
+      "service": "Pakalpojums",
+      "serviceDesc": "Izvēlieties pakalpojumu",
+      "master": "Meistars", 
+      "masterDesc": "Izvēlieties speciālistu",
+      "time": "Laiks",
+      "timeDesc": "Izvēlieties datumu un laiku"
+    },
+    "form": {
+      "selectService": "1. Izvēlieties pakalpojumu",
+      "selectServicePlaceholder": "Izvēlieties pakalpojumu...",
+      "selectMaster": "2. Izvēlieties meistaru",
+      "selectMasterPlaceholder": "Izvēlieties meistaru...",
+      "selectTime": "3. Izvēlieties datumu un laiku",
+      "selectServiceFirst": "Vispirms izvēlieties pakalpojumu",
+      "availableMasters": "Pieejami meistari šim pakalpojumam",
+      "loading": "Ielādē...",
+      "policies": "Svarīga informācija",
+      "deposit": "Avanss",
+      "depositDesc": "50% no pakalpojuma cenas",
+      "cancellation": "Atcelšana",
+      "cancellationDesc": "Bezmaksas līdz 24h pirms",
+      "hygiene": "Higiēna",
+      "hygieneDesc": "Sterilizēti instrumenti",
+      "callOption": "Vai labāk zvanīt? Mēs labprāt palīdzēsim!",
+      "trafftPlaceholder": "Trafft kalendārs tiks ielādēts šeit"
+    }
+  }
+}

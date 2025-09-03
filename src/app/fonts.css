@@ -1,0 +1,9 @@
+/* Font utility classes using CSS variables */
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans);
+}

@@ -1,0 +1,141 @@
+---
+description: Guidelines for creating and maintaining Cursor rules to ensure consistency and effectiveness.
+globs: .cursor/rules/*.mdc
+alwaysApply: true
+---
+---
+description: This file defines the canonical format and usage style for writing Cursor rules. It enforces clarity, real-world relevance, and consistent formatting across all `.mdc` rule files.
+globs: .cursor/rules/*.mdc
+alwaysApply: true
+---
+
+# ⚙️ cursor_rules.mdc  
+**ClickRevamp / GOD-tier Rule Authoring Guide**  
+*For all `.mdc` rules in Cursor AI projects*
+
+---
+
+## 📐 Rule File Format
+
+Every rule must follow this structure:
+
+````markdown
+---
+description: One-line summary of what the rule does or enforces  
+globs: path/to/files/*.ext  
+alwaysApply: true | false
+---
+
+# 🔹 Title of the Rule
+
+## ✅ Summary  
+A short, high-level explanation of the rule.
+
+## 📏 Requirements  
+- Specific actionable statements
+- Clear dos and don’ts
+- Visual or code examples
+
+## 💡 Examples  
+```tsx
+// ✅ Good
+<Button className="px-4 py-2 text-white">Click</Button>
+
+// ❌ Bad
+<button style="padding: 4px">Click</button>
+
+🧠 References
+
+    @file-name.mdc
+
+    @ui_styleguide.mdc — for padding/typography consistency
+
+
+---
+
+## 🧱 Structural Rules
+
+- Each rule must define:
+  - **Goal + summary**
+  - **Enforceable guidelines**
+  - **Real examples** in code
+- Prefer **Markdown code blocks** with annotations
+- Use `@filename` or `(@filename)` for referencing related rules
+
+---
+
+## ✍️ Writing Rules
+
+- Open with a **clear, bold title**
+- Use strong **section headings** (`##`, `###`) for scan-ability
+- Bullet concise enforcement logic:
+  - ✅ What to do
+  - ❌ What to avoid
+- Support **cursor-native helpers** like `@schema.prisma`, `@ui_styleguide.mdc`, or any `.mdx/.mdc` in your workspace
+
+---
+
+## 🎨 Code Styling
+
+```ts
+// ✅ DO: Clear, styled, semantic components
+<Button className="rounded-xl px-6 py-2 text-white shadow-sm hover:bg-blue-600">Start</Button>
+
+// ❌ DON'T: Inline style or unclear usage
+<button style="margin: 8px; padding: 4px;">Start</button>
+```
+
+---
+
+## 🔁 Maintenance Philosophy
+
+- Refactor stale or redundant rules monthly
+- Replace vague text with **real code**
+- Cross-link related rules (`@color_palettes.md`, etc.)
+- Never duplicate guidance — extract shared logic into separate `.mdc` or `.mdx`
+
+---
+
+## 📚 Referencing Conventions
+
+| Use this        | For...                                   |
+|----------------|-------------------------------------------|
+| `@file.mdc`     | Rule references in Cursor sidebar        |
+| `@schema.prisma`| Code anchors like DB/GraphQL schemas     |
+| `@ui_styleguide.mdc` | Design system tokens + spacing        |
+
+---
+
+## ✅ Best Practices Summary
+
+- Use **bold** for key callouts
+- Format consistently with baseline spacing
+- Include both good and bad code patterns
+- Always prefer real component/code use
+- Leverage `.mdx` where visuals or React are useful
+
+---
+
+## 🧠 Design System Reference
+
+> For any typography, spacing, or layout-related rules, refer to:  
+> `@ui_styleguide.mdc` + `@typography_reference.mdc` + `@color_palettes.md`
+
+---
+
+## 🧪 Final Checklist for Rules
+
+- [ ] Uses correct YAML frontmatter
+- [ ] Includes title, summary, rules, and examples
+- [ ] References other `.mdc` files when relevant
+- [ ] Is short, clear, actionable, and DRY
+
+---
+
+📁 **Source:**
+- ClickRevamp AI Rule System
+- Inspired by Refactoring UI, Tailwind, Shadcn, Cursor Docs
+
+```
+
+---

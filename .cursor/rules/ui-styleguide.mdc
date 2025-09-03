@@ -1,0 +1,147 @@
+---
+description:
+globs:
+alwaysApply: true
+---
+🧠 ui_styleguide.mdc – Lash Studio Design Brain
+
+description: Modular design reference for a high-end beauty salon site. Tailored for Cursor AI, this governs typography, colors, spacing, motion, and UX patterns to ensure consistency across all pages.
+
+🎨 Typography System
+Fonts
+
+Fraunces (serif) → Headlines / Display (emotional, elegant)
+
+Manrope (sans) → Body / UI text (clean, modern)
+
+Roles
+Role	Use Case	Notes
+Display	Hero headlines, big banners	Fraunces, tight tracking
+Headline	Section titles	Fraunces, strong contrast
+Title	Cards, small blocks, modals	Fraunces bold, compact
+Body	Paragraphs, descriptions	Manrope, relaxed line-height
+Label	Buttons, captions, form labels	Manrope, medium weight
+✍️ Typesetting Rules
+
+Scale & spacing:
+
+h1 → text-5xl md:text-6xl font-serif tracking-tight
+
+h2 → text-3xl font-serif
+
+h3 → text-xl font-serif
+
+p → text-base leading-relaxed text-ink/70
+
+Vertical rhythm: 24 / 32 / 40px multiples for consistent flow
+
+Whitespace: generous margins around headlines and CTAs to keep it airy and premium
+
+🎨 Color System
+Palette
+
+Blush Rose #EEDDE2 (soft background accent)
+
+Mauve #D9C2C8 (secondary UI, tabs)
+
+Porcelain #FAF8F7 (default background)
+
+Charcoal Ink #1C1A1A (main text)
+
+Champagne Gold #CFB27C (accents, rules, subtle CTAs)
+
+Usage
+
+Background: Porcelain
+
+Primary text: Ink
+
+Accent (buttons, separators): Gold
+
+Do not overuse blush/mauve — keep as highlights
+
+⚡ Motion & Interaction
+
+Entrance: Fade + rise (200–300ms, ease-out)
+
+Stagger: 60–80ms between elements
+
+Hover: Slight lift (scale 1.01, shadow deepen)
+
+Tap: Bounce spring (framer-motion)
+
+Accessibility: Respect prefers-reduced-motion
+
+Animations should be subtle, editorial, elegant, never distracting.
+
+♿ Accessibility & Contrast
+
+Large text min contrast 3:1
+
+Small text min contrast 4.5:1
+
+Links must be clearly styled (underline or distinct color)
+
+Form elements require <label> and ARIA tags
+
+Locale switcher must be keyboard accessible
+
+🧠 UX Laws (Applied for Booking UX)
+
+Hick’s Law: Keep booking steps minimal (2–3 taps)
+
+Fitts’s Law: Big CTA buttons, sticky mobile booking bar
+
+Miller’s Law: Don’t overload with too many services at once; chunk by category
+
+Peak-End Rule: Booking confirmation should feel delightful (toast + summary)
+
+Occam’s Razor: Only necessary fields in forms (name, phone, service, master)
+
+Tesler’s Law: Shift complexity (deposits, no-show fees) to provider logic, not UI
+
+✅ DOs & DON'Ts
+
+✅ Keep whitespace generous — editorial, not cramped
+
+✅ Use serif for impact, sans for clarity
+
+✅ Use brand tokens only (no ad-hoc hex colors)
+
+✅ Always show booking policies clearly (deposit, cancellation)
+
+⚠️ Don’t over-animate
+
+⚠️ Don’t stack multiple decorative fonts
+
+⚠️ Don’t hide essential booking info behind clicks
+
+📦 Tokens & Spacing
+--font-display: 'Fraunces', serif
+--font-body:    'Manrope', sans-serif
+
+--color-bg:      #FAF8F7
+--color-text:    #1C1A1A
+--color-accent:  #CFB27C
+--color-blush:   #EEDDE2
+--color-mauve:   #D9C2C8
+
+--space-xs: 4px
+--space-sm: 8px
+--space-md: 16px
+--space-lg: 24px
+--space-xl: 40px
+--radius-xl: 20px
+--radius-2xl: 24px
+--shadow-card: 0 10px 24px rgba(28,26,26,0.08)
+🎯 Key Takeaways
+
+Luxury through simplicity → airy layout, serif headlines, gold accents.
+
+Low-friction booking → fewer steps, clear policies, big CTAs.
+
+Consistency → same rhythm, same tokens, same components (shadcn).
+
+Elegance, not overload → subtle motion, restrained palette.
+
+✅ This styleguide now “teaches” Cursor to always design/build in a premium salon aesthetic: editorial typography, airy layouts, blush/gold tones, and smooth booking UX.

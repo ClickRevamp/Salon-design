@@ -1,0 +1,149 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+
+# 🧠 ClickRevamp UI Styleguide: Material 3 Typography
+
+This document is a curated reference based on Material Design 3 typography guidance — focused on expressive type, editorial treatments, and variable font systems — tailored to ClickRevamp’s design system and Cursor-based development.
+
+---
+
+## 🎨 Variable Fonts
+
+### Fonts Used
+- **Roboto Flex** (preferred)
+- Roboto Serif
+- Roboto Mono
+
+These fonts support multiple customizable axes:
+- **Weight**
+- **Grade**
+- **Width**
+- **Slant**
+- **Optical size**
+
+---
+
+## ✍️ Style Roles
+
+M3 defines five distinct type roles to organize text:
+1. **Display** – Largest, attention-grabbing text
+2. **Headline** – Short bursts of high-emphasis
+3. **Title** – Medium-weight, secondary emphasis
+4. **Body** – Default for readable content
+5. **Label** – Small utility text (e.g. buttons, captions)
+
+---
+
+## 🧱 Typesetting Rules
+
+### Padding & Bounding Boxes
+- Line height determines bounding box size
+- Vertically center-align text within containers
+- Maintain even padding above and below text
+
+### Baseline Usage
+- Anchor text position using the **baseline**, not bounding box
+- Android/Material UIs rely on baseline distance for spacing
+- Avoid measuring by "top" or "center" when baseline spec exists
+
+---
+
+## 📏 Line Height Guidance
+
+| Use Case        | Ratio (line height ÷ font size) |
+|----------------|-------------------------------|
+| Title / Headline / Display | ~1.2x |
+| Body / Label              | ~1.5x |
+
+Improper line height breaks visual rhythm. Always balance readability with space economy.
+
+---
+
+## 🔡 Tabular Numbers
+
+Use **monospaced/tabular** figures in:
+- Clocks
+- Data tables
+- Price values
+
+Avoid proportional numerals in aligned layouts.
+
+---
+
+## 🧑‍🦯 Accessibility: Color & Contrast
+
+Minimum contrast ratios:
+- **3:1** for large text (≥18pt or bold 14pt)
+- **4.5:1** for normal text
+
+Typography contrast tokens:
+- `md.sys.color.on-surface`
+- `md.sys.color.on-surface-variant`
+
+Hyperlinks:
+- Must be underlined
+- Use **primary** or **tertiary** color
+
+---
+
+## ✨ Editorial Treatments
+
+Editorial moments allow **typography to dominate UI** for emotion or story. Use in:
+- Content celebrations
+- Highlighting user voice
+- Bespoke functionality (e.g. home screen, success moments)
+
+### Best Practices
+✅ Match emotional tone  
+✅ Keep styles consistent across similar layouts  
+⚠️ Don’t mix clashing styles in one view  
+⚠️ Don’t mimic user personalization randomly
+
+---
+
+## 🔧 Variable Axes – Advanced Typographic Control
+
+### Weight
+- Controls stroke thickness
+- Use lighter weight for body, bold for headlines
+- Avoid extreme weights at small sizes
+
+### Grade
+- Adjusts optical weight *without* affecting layout
+- Use negative grade in dark mode to reduce perceived heaviness
+
+### Width
+- Controls horizontal space per glyph
+- Narrow = more characters per line
+- Wide = expressive, but not for dense UIs
+
+### Optical Size
+- Match font optical size to actual font size
+- E.g. small optical size for body text; large optical size for hero text
+- Prevents detail loss or visual awkwardness
+
+---
+
+## ✅ Do's & ❌ Don'ts
+
+| ✅ Do | ❌ Don’t |
+|------|---------|
+| Match line height to type role | Let text float or crowd |
+| Use variable weights responsibly | Apply extreme weights on mobile |
+| Align by baseline | Guess using bounding box top |
+| Style editorial text with tone | Use editorial fonts in UI labels |
+| Use optical sizes smartly | Use display fonts for 12pt body text |
+
+---
+
+## 🔗 Sources
+- [Material 3 Typography Overview](https://developer.android.com/develop/ui/compose/designsystems/material3#typography)
+- [Compose Typography API Reference](https://developer.android.com/reference/kotlin/androidx/compose/material3/Typography)
+- Material.io design spec screenshots (internal)
+
+---
+
+

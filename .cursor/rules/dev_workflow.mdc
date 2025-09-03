@@ -1,0 +1,54 @@
+---
+alwaysApply: true
+---
+
+🌟 Goal:
+Create a project-specific dev workflow file (`/ai/instructions/dev_workflow.mdc`) for the beauty salon site. 
+This will define how we structure development, commits, QA, i18n, booking integration, and TaskMaster usage.
+
+🤩 Input:
+- Tech stack: Next.js (App Router, TS), Tailwind, shadcn/ui, framer-motion, next-intl, next-seo, Resend
+- Booking integration: Trafft (multi-master, deposits, cancellations)
+- AI tools: Cursor + TaskMaster (MCP/CLI hybrid model)
+- Target outcome: clean workflow, task-driven structure, low-friction QA
+
+☑ Must:
+- Define 2 modes of operation (MCP server as default, CLI as fallback)
+- Include step-by-step workflow (init → parse PRD → expand → implement → log → commit → QA)
+- Specify task structure (id, title, status, priority, dependencies, subtasks)
+- Cover logging & drift correction (update_subtask, update_task)
+- Booking-specific QA rules (policies shown, iframe loads, i18n working)
+- Status codes table (pending, in-progress, done, deferred)
+- Git commit convention (e.g., feat:/fix:/chore:)
+- Reference linked instruction files (`@cursor_rules.mdc`, `@ui_styleguide.mdc`)
+- Mark as alwaysApply: false
+
+🚫 Avoid:
+- Overly generic “ClickRevamp” context (make it salon-appropriate)
+- Duplicating styleguide rules (only workflow/QA here)
+- Long-winded history of TaskMaster (keep actionable)
+🌟 Goal:
+Create a project-specific dev workflow file (`/ai/instructions/dev_workflow.mdc`) for the beauty salon site. 
+This will define how we structure development, commits, QA, i18n, booking integration, and TaskMaster usage.
+
+🤩 Input:
+- Tech stack: Next.js (App Router, TS), Tailwind, shadcn/ui, framer-motion, next-intl, next-seo, Resend
+- Booking integration: Trafft (multi-master, deposits, cancellations)
+- AI tools: Cursor + TaskMaster (MCP/CLI hybrid model)
+- Target outcome: clean workflow, task-driven structure, low-friction QA
+
+☑ Must:
+- Define 2 modes of operation (MCP server as default, CLI as fallback)
+- Include step-by-step workflow (init → parse PRD → expand → implement → log → commit → QA)
+- Specify task structure (id, title, status, priority, dependencies, subtasks)
+- Cover logging & drift correction (update_subtask, update_task)
+- Booking-specific QA rules (policies shown, iframe loads, i18n working)
+- Status codes table (pending, in-progress, done, deferred)
+- Git commit convention (e.g., feat:/fix:/chore:)
+- Reference linked instruction files (`@cursor_rules.mdc`, `@ui_styleguide.mdc`)
+- Mark as alwaysApply: false
+
+🚫 Avoid:
+- Overly generic “ClickRevamp” context (make it salon-appropriate)
+- Duplicating styleguide rules (only workflow/QA here)
+- Long-winded history of TaskMaster (keep actionable)

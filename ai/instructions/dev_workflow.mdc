@@ -1,0 +1,247 @@
+---
+description: Development workflow, commit strategy, and quality standards for Lash Bloom Studio
+alwaysApply: true
+---
+
+# 🔧 Development Workflow
+
+## 📝 Commit Strategy
+
+### Conventional Commits Format
+```
+type(scope): description
+
+feat(booking): add Trafft integration with deposit handling
+fix(i18n): correct Latvian translation keys for services  
+chore(deps): update Next.js to latest stable version
+docs(readme): add local development setup instructions
+```
+
+### Commit Types
+- **feat**: New features or enhancements
+- **fix**: Bug fixes and corrections
+- **chore**: Maintenance, deps, config changes
+- **docs**: Documentation updates
+- **style**: Code formatting, no logic changes
+- **refactor**: Code restructuring without behavior change
+- **perf**: Performance improvements
+- **test**: Test additions or modifications
+
+### Scope Examples
+- `booking`, `i18n`, `ui`, `forms`, `seo`, `api`, `styles`, `deps`
+
+### Commit Rules
+- Keep first line under 72 characters
+- Use imperative mood ("add" not "added")
+- Reference issues: `fixes #123` or `closes #456`
+- Break large changes into logical commits
+- Never commit broken code to main branch
+
+## 🔍 PR Review Checklist
+
+### Code Quality
+- [ ] Follows TypeScript strict mode requirements
+- [ ] Uses proper error handling with try/catch
+- [ ] No console.log statements in production code
+- [ ] Proper loading and error states for async operations
+- [ ] Components are properly typed with interfaces
+
+### Design System Compliance
+- [ ] Uses shadcn/ui components before creating custom ones
+- [ ] Follows Tailwind token system (no hard-coded values)
+- [ ] Maintains spacing rhythm (24px/32px/40px)
+- [ ] Typography follows serif/sans hierarchy
+- [ ] Colors use brand tokens exclusively
+
+### Accessibility
+- [ ] Interactive elements are keyboard accessible
+- [ ] Proper ARIA labels on buttons and form fields
+- [ ] Semantic HTML structure maintained
+- [ ] Color contrast meets WCAG AA standards
+- [ ] Focus indicators visible and consistent
+
+### Performance
+- [ ] Images optimized and use Next.js Image component
+- [ ] No unnecessary re-renders or effect loops
+- [ ] Lazy loading implemented where appropriate
+- [ ] Bundle size impact considered for new dependencies
+
+### Testing
+- [ ] Page loads without console errors
+- [ ] Mobile responsiveness verified
+- [ ] Cross-browser compatibility checked
+- [ ] Internationalization tested (LV/RU/EN)
+
+## 🌐 Internationalization Rules
+
+### Translation Keys
+```javascript
+// ✅ Nested structure
+t('nav.booking')          // "Rezervācija"
+t('services.lashes.title') // "Skropstu pagarināšana"
+t('form.validation.required') // "Šis lauks ir obligāts"
+
+// ❌ Flat structure  
+t('booking-nav-link')     // Avoid
+t('lashes-service-title') // Avoid
+```
+
+### Key Naming Convention
+- **Domain.component.element**: `booking.form.submit`
+- **Domain.collection.item**: `services.lashes.classic`
+- **Common.category.type**: `ui.buttons.primary`
+
+### Translation Best Practices
+- Always use `useTranslations()` hook for text
+- Never hard-code strings in components
+- Keep translation keys descriptive and hierarchical
+- Include context in key names when meaning could be ambiguous
+- Test all languages before merging
+
+### Locale-Specific Considerations
+- **Latvian**: Default locale, no URL prefix needed
+- **Russian**: Cyrillic support, longer text considerations
+- **English**: Fallback for missing translations
+- **RTL**: Not needed for these languages
+- **Pluralization**: Use next-intl plural forms when needed
+
+## 🔍 SEO/Meta Conventions
+
+### Page Metadata Template
+```typescript
+export const metadata: Metadata = {
+  title: 'Page Title - Lash Bloom Studio',
+  description: 'Concise description under 160 characters that includes key terms.',
+  openGraph: {
+    title: 'Page Title',
+    description: 'Same or enhanced description for social sharing.',
+    images: ['/og-images/page-specific.jpg'],
+  },
+};
+```
+
+### SEO Rules
+- **Title**: Include page name + brand, under 60 characters
+- **Description**: 140-160 characters, include target keywords naturally
+- **H1**: One per page, matches title intent
+- **Headings**: Logical hierarchy (H1→H2→H3), no levels skipped
+- **URLs**: Clean, descriptive slugs in Latvian (primary language)
+
+### JSON-LD Structured Data
+```javascript
+// For service pages
+{
+  "@type": "Service",
+  "name": "Klasiskās skropstas", 
+  "provider": "Lash Bloom Studio",
+  "offers": {
+    "price": "45",
+    "priceCurrency": "EUR"
+  }
+}
+
+// For business info
+{
+  "@type": "LocalBusiness",
+  "name": "Lash Bloom Studio",
+  "address": "Brīvības iela 123, Rīga"
+}
+```
+
+## 📊 Analytics Hooks
+
+### Event Tracking Strategy
+```javascript
+// Booking funnel
+gtag('event', 'booking_step_1', { service_type: 'classic-lashes' });
+gtag('event', 'booking_step_2', { master_selected: 'anna' });
+gtag('event', 'booking_completed', { value: 45, currency: 'EUR' });
+
+// Content engagement  
+gtag('event', 'service_viewed', { service_id: 'volume-lashes' });
+gtag('event', 'gallery_interaction', { image_index: 3 });
+```
+
+### Key Events to Track
+- **Booking Flow**: Each step completion + abandonment points
+- **Service Interest**: Which services get most views/clicks
+- **Contact Attempts**: Phone clicks, form submissions
+- **Language Switching**: Locale preferences and usage
+- **Page Performance**: Core Web Vitals, error rates
+
+### Privacy Compliance
+- Cookie consent before analytics activation
+- No PII in event parameters
+- Respect Do Not Track headers
+- GDPR-compliant data retention policies
+
+## ⚡ Performance Tips
+
+### Core Web Vitals Optimization
+- **LCP**: Optimize hero images, preload critical fonts
+- **FID**: Minimize JavaScript execution, use code splitting
+- **CLS**: Specify image dimensions, avoid dynamic content injection
+
+### Next.js Specific
+```javascript
+// Image optimization
+<Image
+  src="/hero-image.jpg"
+  alt="Description"
+  width={1200} height={800}
+  priority={true} // For above-fold images
+  placeholder="blur" // For better UX
+/>
+
+// Font optimization
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap', // Prevent FOIT
+  variable: '--font-sans'
+});
+
+// Dynamic imports for code splitting
+const BookingWidget = dynamic(() => import('./BookingWidget'), {
+  loading: () => <BookingSkeleton />
+});
+```
+
+### Bundle Optimization
+- Audit bundle size with `npm run build`
+- Use dynamic imports for large components
+- Optimize third-party scripts (defer, async)
+- Minimize polyfills for modern browsers
+
+### Runtime Performance
+- Use React.memo for expensive components
+- Implement proper loading states
+- Debounce search and form inputs
+- Optimize re-renders with useMemo/useCallback
+
+## 🚀 Deployment Checklist
+
+### Pre-Deploy
+- [ ] All tests passing locally
+- [ ] Build completes without warnings
+- [ ] Lighthouse scores acceptable (90+ for performance)
+- [ ] Cross-browser testing completed
+- [ ] Mobile responsiveness verified
+
+### Environment Variables
+- [ ] All required env vars set in production
+- [ ] API keys properly configured
+- [ ] Database connections tested
+- [ ] Third-party integrations verified
+
+### Post-Deploy Verification
+- [ ] All pages load correctly
+- [ ] Forms submit successfully
+- [ ] Analytics tracking functional
+- [ ] Error monitoring active
+- [ ] CDN cache properly configured
+
+---
+
+💡 **Tool Integration**: Use Cursor for AI-assisted development
+🔗 **References**: Link to staging environment and documentation  
+📱 **Testing**: Always test on real devices, not just browser dev tools

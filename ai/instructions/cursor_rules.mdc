@@ -1,0 +1,320 @@
+---
+description: Cursor AI coding constraints and preferences for Lash Bloom Studio development
+alwaysApply: true
+---
+
+# 🤖 Cursor Rules & Constraints
+
+## 🎯 Component Strategy
+
+### shadcn/ui First Policy
+```typescript
+// ✅ Use shadcn components as foundation
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+
+// ❌ Don't create custom buttons/cards from scratch
+const CustomButton = () => <div className="...">; // Avoid
+```
+
+### Component Creation Rules
+1. **Check shadcn first**: Always verify if component exists
+2. **Extend, don't replace**: Use `className` prop to customize  
+3. **Compose over configure**: Combine simple components vs complex variants
+4. **Export patterns**: Use default exports for pages, named for utilities
+
+### When to Create Custom Components
+- **Layout primitives**: Container, Section (already created)
+- **Business logic**: ServiceCard, BookingFlow (domain-specific)
+- **Compositions**: Hero sections, feature blocks
+- **Never create**: Basic buttons, inputs, cards, modals
+
+## 🎨 Styling Constraints
+
+### No Hard-Coded Values
+```typescript
+// ✅ Use design tokens
+className="bg-brand-text text-brand-bg p-6 rounded-xl"
+className="text-gold hover:text-gold/90"
+
+// ❌ Never hard-code
+className="bg-[#1C1A1A] text-[#FAF8F7]" // Forbidden
+style={{ color: '#CFB27C' }} // Forbidden
+```
+
+### Color Usage Rules
+- **Brand colors only**: `brand-text`, `brand-bg`, `brand-accent`
+- **System colors**: `blush`, `mauve`, `gold`, `ink`, `porcelain`
+- **shadcn colors**: `background`, `foreground`, `muted`, etc.
+- **Forbidden**: Any hex codes, RGB values, blue gradients
+
+### Spacing System
+```typescript
+// ✅ Follow 8px rhythm
+className="p-6 mb-8 gap-4" // 24px, 32px, 16px
+className="py-12 md:py-16" // Section spacing
+
+// ❌ Random spacing
+className="p-7 mb-13" // Breaks rhythm
+className="ml-[23px]" // Arbitrary values forbidden
+```
+
+## 🌐 Internationalization Rules
+
+### Always Use Translations
+```typescript
+// ✅ Proper i18n usage
+import { useTranslations } from 'next-intl';
+
+const Component = () => {
+  const t = useTranslations('nav');
+  return <button>{t('booking')}</button>;
+};
+
+// ❌ Hard-coded strings forbidden
+return <button>Book Now</button>; // Never
+return <p>Rezervēt tagad</p>; // Never, even in Latvian
+```
+
+### Translation Key Strategy
+- Use `useTranslations('domain')` for scoped keys
+- Prefer hierarchical keys: `hero.title`, `form.submit`
+- Include context in ambiguous keys: `button.save.booking`
+- Test all languages during development
+
+## 🏗️ Architecture Patterns
+
+### File Organization
+```
+src/
+├── app/[locale]/           # Next.js app router pages
+├── components/             # Reusable components
+│   ├── ui/                # shadcn components (don't modify)
+│   ├── Header.tsx         # Layout components
+│   └── ServiceCard.tsx    # Business components
+├── data/                  # Static data, types
+├── lib/                   # Utilities, helpers
+└── styles/                # Design tokens, globals
+```
+
+### Import Preferences
+```typescript
+// ✅ Absolute imports with @/ alias
+import Container from '@/components/Container';
+import { serviceCategories } from '@/data/services';
+
+// ❌ Relative imports for cross-directory
+import Container from '../../components/Container'; // Avoid
+```
+
+### Component Structure
+```typescript
+// ✅ Preferred component pattern
+'use client'; // Only when needed
+
+import { ComponentProps } from 'react';
+import { useTranslations } from 'next-intl';
+
+interface ComponentNameProps {
+  required: string;
+  optional?: boolean;
+  className?: string;
+}
+
+export default function ComponentName({
+  required,
+  optional = false,
+  className
+}: ComponentNameProps) {
+  const t = useTranslations('domain');
+  
+  return (
+    <div className={cn("base-styles", className)}>
+      {/* Implementation */}
+    </div>
+  );
+}
+```
+
+## 🚫 Forbidden Patterns
+
+### Styling Anti-Patterns
+```typescript
+// ❌ Inline styles
+<div style={{ marginTop: '20px' }} />
+
+// ❌ Blue colors (brand conflict)
+className="bg-blue-500 text-blue-100"
+
+// ❌ Hard-coded hex values  
+className="border-[#FF0000]"
+
+// ❌ Arbitrary spacing
+className="ml-[23px] pt-[7px]"
+
+// ❌ Non-semantic HTML
+<div onClick={handleClick}>Click me</div> // Use <button>
+```
+
+### Code Anti-Patterns
+```typescript
+// ❌ Overly complex variant systems
+const buttonVariants = cva("base", {
+  variants: {
+    size: { xs: "", sm: "", md: "", lg: "", xl: "", 2xl: "" },
+    color: { /* 10+ colors */ },
+    style: { /* 5+ styles */ }
+  }
+}); // Too complex, compose instead
+
+// ❌ Non-semantic component names
+const Wrapper = () => {}; // Use Container, Section, etc.
+const Thing = () => {};   // Be descriptive
+
+// ❌ Prop drilling beyond 2-3 levels
+<ComponentA config={config}>
+  <ComponentB config={config}>
+    <ComponentC config={config} /> // Use context or state management
+  </ComponentB>
+</ComponentA>
+```
+
+## ✅ Preferred Patterns
+
+### Composition Over Configuration
+```typescript
+// ✅ Compose simple components
+<Card className="border-gold/30">
+  <CardHeader>
+    <CardTitle className="font-serif">Title</CardTitle>
+  </CardHeader>
+  <CardContent>Content</CardContent>
+</Card>
+
+// ❌ Complex variant systems
+<Card variant="featured" theme="gold" size="large" />
+```
+
+### Semantic HTML Structure
+```typescript
+// ✅ Semantic elements
+<main>
+  <Section as="section" spacing="xl">
+    <Container>
+      <article>
+        <header>
+          <h1>Page Title</h1>
+        </header>
+        <p>Content</p>
+      </article>
+    </Container>
+  </Section>
+</main>
+
+// ❌ Div soup
+<div>
+  <div>
+    <div>
+      <div>Content</div>
+    </div>
+  </div>
+</div>
+```
+
+### State Management
+```typescript
+// ✅ URL state for user-facing data
+const [service, setService] = useState(searchParams.get('service'));
+
+// ✅ Local state for UI interactions
+const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+// ✅ Context for cross-component data
+const { user, booking } = useBookingContext();
+
+// ❌ Global state for everything
+const globalState = useGlobalStore(); // Avoid unless necessary
+```
+
+## 🎭 Animation Guidelines
+
+### Motion Constraints
+```typescript
+// ✅ Consistent timing
+const fadeInUp = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.24, ease: "easeOut" }
+};
+
+// ✅ Stagger timing
+staggerChildren: 0.06 // 60ms delay
+
+// ❌ Random timing
+transition: { duration: 0.37, ease: "easeInOut" } // Be consistent
+```
+
+### Animation Rules
+- Use 240ms for content entrance
+- Use 60ms for stagger delays  
+- Use 200ms for hover effects
+- Always respect `prefers-reduced-motion`
+- Avoid decorative animations
+
+## 📱 Responsive Design
+
+### Mobile-First Approach
+```typescript
+// ✅ Mobile-first responsive classes
+className="text-base md:text-lg lg:text-xl"
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+
+// ❌ Desktop-first (harder to maintain)
+className="text-xl lg:text-lg md:text-base" // Confusing cascade
+```
+
+### Breakpoint Usage
+- **Default**: Mobile (0-768px)
+- **md**: Tablet (768px+)  
+- **lg**: Desktop (1024px+)
+- **xl**: Large desktop (1280px+)
+- **2xl**: Extra large (1536px+)
+
+## 🔧 Performance Rules
+
+### Component Optimization
+```typescript
+// ✅ Lazy load heavy components
+const BookingWidget = dynamic(() => import('./BookingWidget'), {
+  loading: () => <Skeleton className="h-96" />
+});
+
+// ✅ Memoize expensive calculations
+const expensiveValue = useMemo(() => heavyComputation(data), [data]);
+
+// ❌ Inline object/function creation in render
+<Component style={{ margin: 10 }} onClick={() => handleClick()} />
+```
+
+### Image Optimization
+```typescript
+// ✅ Always use Next.js Image
+import Image from 'next/image';
+
+<Image
+  src="/hero.jpg"
+  alt="Descriptive alt text"
+  width={1200}
+  height={800}
+  priority={isAboveFold}
+/>
+
+// ❌ Regular img tags
+<img src="/hero.jpg" /> // Forbidden in production
+```
+
+---
+
+🎯 **Philosophy**: Consistency over cleverness, composition over configuration
+🔄 **Updates**: Modify these rules as the project evolves, document changes
+🤝 **Collaboration**: Use these rules to guide code reviews and discussions

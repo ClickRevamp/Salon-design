@@ -26,7 +26,7 @@
 
   "hero": {
     "eyebrow": { "lv": "Premium Lash Studio" },
-    "headline": { "lv": "Izcel savu dabisko skaistumu ar profesionālu skropstu dizainu" },
+    "headline": { "lv": "Izcel savu {dabisko skaistumu} ar {profesionālu skropstu dizainu}" },
     "subheadline": { "lv": "Sterila vide, sertificēti speciālisti un eleganta pieredze Rīgas sirdī." },
     "primaryCta": { "lv": "Pierakstīties", "href": "/rezervacija" },
     "secondaryCta": { "lv": "Uzzināt vairāk", "href": "/par-mums" },

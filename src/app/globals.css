@@ -147,4 +147,53 @@
     font-weight: 600;
     text-underline-offset: 3px;
   }
+
+  /* Display serif tuned like inspo */
+  .display-h1{
+    font-family: var(--font-serif, serif);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    word-spacing: 0;
+    font-size: clamp(36px, 5vw, 64px);
+    max-width: 15ch;
+  }
+
+  /* Nav pills (center links like inspo) */
+  .nav-pill{
+    display:inline-flex; align-items:center; gap:.5rem;
+    padding:.5rem .9rem; border-radius:9999px;
+    background: rgba(255,255,255,.6);
+    border:1px solid rgba(0,0,0,.06);
+    backdrop-filter: blur(6px);
+    transition: transform .15s ease, background-color .15s ease;
+  }
+  .nav-pill:hover{ transform: translateY(-1px); background: rgba(255,255,255,.8); }
+
+  /* Hero card container */
+  .hero-card{
+    /* classes applied in JSX control radius/border/shadow */
+  }
+
+  /* Hero display typography */
+  .display-hero{
+    font-family: var(--font-display, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 0.9;
+    /* balance when supported */
+    text-wrap: balance;
+    /* 3 lines on desktop; tune if needed */
+    font-size: clamp(36px, 6vw, 64px);
+    word-spacing: 0;
+  }
+  .display-hero strong{ font-weight: 900; }
+  @supports not (text-wrap: balance){
+    .display-hero{ text-wrap: pretty; }
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    .nav-pill, .btn-primary, header{ transition: none !important; }
+  }
 }

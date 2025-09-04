@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
-import { Fraunces, Manrope } from "next/font/google";
+import { Fraunces, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from 'sonner';
 import { defaultMetadata, viewport } from '@/seo.config';
 import Header from '@/components/Header';
@@ -18,6 +18,13 @@ const fraunces = Fraunces({
 const manrope = Manrope({ 
   subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
+});
+
+const display = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600", "700", "800"],
+  variable: "--font-display",
   display: "swap",
 });
 
@@ -38,7 +45,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className={`${fraunces.variable} ${manrope.variable}`}>
+    <html lang={locale} className={`${fraunces.variable} ${manrope.variable} ${display.variable}`}>
       <body className="font-sans antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <div className="flex min-h-screen flex-col">

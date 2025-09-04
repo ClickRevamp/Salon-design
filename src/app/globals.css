@@ -9,6 +9,7 @@
     --bg: #FAF7F5;
     --surface: #FFFFFF;
     --ink: #1B1B1B;
+    --ink-rgb: 27, 27, 27;
     --subtle: #6B625C;
     --accent: #E6CBA8;   /* champagne */
     --blush: #EED9D0;    /* blush/nude */
@@ -192,8 +193,59 @@
     .display-hero{ text-wrap: pretty; }
   }
 
+  /* Centered text-link nav */
+  .nav-link{
+    @apply relative inline-flex items-center px-2.5 py-1.5 rounded-md transition-colors;
+    color: rgba(var(--ink-rgb, 27, 27, 27), 0.8);
+  }
+  .nav-link:hover{ 
+    @apply bg-black/5;
+    color: var(--ink);
+  }
+  .nav-link[data-active="true"]{ 
+    @apply font-medium;
+    color: var(--ink);
+  }
+  .nav-link::after{
+    content:""; position:absolute; left:8px; right:8px; bottom:2px;
+    height:2px; background: var(--accent);
+    transform: scaleX(0); transform-origin:left; transition: transform .18s ease;
+  }
+  .nav-link[data-active="true"]::after, .nav-link:hover::after{ 
+    transform: scaleX(1); 
+  }
+
+  /* WhatsApp action button (no clipping) */
+  .wa-btn{
+    @apply inline-flex h-9 w-9 items-center justify-center rounded-full hover:bg-black/5 transition-colors;
+    color: rgba(var(--ink-rgb, 27, 27, 27), 0.8);
+  }
+  .wa-btn:hover{
+    color: var(--ink);
+  }
+
+  /* Language switch (fix cropped look) */
+  .lang-switch{
+    @apply inline-flex h-9 items-center gap-1 px-3 rounded-full border border-black/10 transition-colors;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(6px);
+    color: rgba(var(--ink-rgb, 27, 27, 27), 0.8);
+    min-width: 44px; /* ensure intrinsic width */
+  }
+  .lang-switch:hover{
+    background: rgba(255, 255, 255, 0.75);
+    color: var(--ink);
+  }
+
+  /* DRY helper for header gutters */
+  .add-header-gutters {
+    @apply pl-4 sm:pl-5 md:pl-8 lg:pl-12 pr-4 sm:pr-5 md:pr-8 lg:pr-12 xl:pr-16;
+  }
+
   /* Respect reduced motion */
   @media (prefers-reduced-motion: reduce){
     .nav-pill, .btn-primary, header{ transition: none !important; }
+    [data-header]{ transition: none !important; }
+    .nav-link::after{ transition: none !important; }
   }
 }

@@ -9,6 +9,7 @@ import home from '@/ai/homepage.json';
 
 // Existing components
 import Hero from '@/components/Hero';
+import AsyncCards from '@/components/AsyncCards';
 import TrustBar from '@/components/TrustBar';
 import CTABand from '@/components/CTABand';
 import ServicesGrid from '@/components/ServicesGrid';
@@ -52,7 +53,7 @@ export default function Home() {
       {/* If your <Hero /> already reads next-intl internally, no props needed */}
       <Hero />
 
-      <TrustBar />
+      <AsyncCards />
 
       {/* Services Preview — now driven by homepage.json */}
       <Section spacing="xl" className="bg-[var(--surface)]">
@@ -75,6 +76,9 @@ export default function Home() {
           />
         </Container>
       </Section>
+
+      {/* Trust badges go AFTER services */}
+      <TrustBar />
 
       <CTABand />
     </div>

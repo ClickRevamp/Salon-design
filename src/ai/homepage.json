@@ -42,6 +42,12 @@
     }
   },
 
+  "mood": {
+    "eyebrow": { "lv": "Jūsu skaistums un panākumi" },
+    "headline": { "lv": "Sākas šeit!" },
+    "sub": { "lv": "Revitalizējiet ādu, atklājiet savu potenciālu un izbaudiet estētisku vidi." }
+  },
+
   "badges": [
     { "title": { "lv": "Sterile & Hygienic" }, "desc": { "lv": "Medicīnas klases sanitārija" }, "icon": "Shield" },
     { "title": { "lv": "Certified Technicians" }, "desc": { "lv": "Profesionāli apmācīti meistari" }, "icon": "BadgeCheck" },

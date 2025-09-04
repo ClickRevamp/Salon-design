@@ -38,7 +38,7 @@ export default function Hero() {
 
   return (
     <section 
-      className="relative isolate overflow-hidden mx-3 sm:mx-4 md:mx-6 lg:mx-8 mb-10 md:mb-16 rounded-b-[28px] md:rounded-b-[40px] border border-black/5 shadow-[0_10px_35px_rgba(26,26,26,0.06)] min-h-[70vh] md:min-h-[72vh] pt-[calc(var(--header-h,72px)+24px)] md:pt-[calc(var(--header-h,72px)+40px)]"
+      className="relative isolate overflow-hidden mx-3 sm:mx-4 md:mx-6 lg:mx-8 mb-0 rounded-b-[48px] md:rounded-b-[56px] border border-black/5 shadow-[var(--shadow-elevated,0_12px_48px_rgba(26,26,26,.08))] min-h-[70vh] md:min-h-[72vh] pt-[calc(var(--header-h,72px)+24px)] md:pt-[calc(var(--header-h,72px)+40px)]"
       style={{ background: themeData.gradients.hero }}
     >
       {/* Noise Overlay */}

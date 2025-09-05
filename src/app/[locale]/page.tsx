@@ -29,11 +29,14 @@ export default function Home() {
       id: (s.name?.lv || '').toLowerCase().replace(/\s+/g, '-'),
       title: s.name?.lv,
       name: s.name?.lv,
+      description: s.excerpt?.lv ?? '',
       duration: s.time,
       time: s.time,
       price: s.price,
+      isPopular: Boolean(s.popular),
       popular: Boolean(s.popular),
-      excerpt: s.excerpt?.lv ?? ''
+      excerpt: s.excerpt?.lv ?? '',
+      image: s.image
     }))
   }));
 
@@ -55,14 +58,24 @@ export default function Home() {
 
       <MoodBoard />
 
-      {/* Services Preview — now driven by homepage.json */}
-      <Section spacing="xl" className="bg-[var(--surface)]">
-        <Container>
-          <div className="text-center mb-12">
-            <h2 className="font-serif text-3xl md:text-4xl font-bold text-[var(--ink)]">
-              {t('servicesTitle')}
+      {/* Services Preview — unified with Hero/Moodboard design */}
+      <section className="bg-transparent pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-18 lg:pb-18">
+        {/* Centered container with consistent max-width */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Centered headings block */}
+          <div className="text-center mb-8 md:mb-10 lg:mb-12">
+            <h2
+              className="font-extrabold tracking-tight text-[var(--ink)] leading-[0.95]"
+              style={{ fontSize: 'clamp(32px, 5vw, 48px)' }}
+            >
+              <strong>Mūsu</strong> pakalpojumi
             </h2>
-            <p className="text-lg text-[var(--subtle)] max-w-2xl mx-auto">
+
+            <p 
+              className="mt-2 md:mt-4 font-medium leading-relaxed max-w-2xl mx-auto text-[var(--subtle)]"
+              style={{ fontSize: 'clamp(16px, 1.8vw, 18px)' }}
+            >
               {t('servicesDescription')}
             </p>
           </div>
@@ -74,8 +87,8 @@ export default function Home() {
             }))}
             defaultCategory="skropstas"
           />
-        </Container>
-      </Section>
+        </div>
+      </section>
 
       {/* Trust badges go AFTER services */}
       <TrustBar />

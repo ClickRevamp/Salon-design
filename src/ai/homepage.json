@@ -68,20 +68,20 @@
         "slug": "skropstas",
         "label": { "lv": "Skropstas" },
         "items": [
-          { "name": { "lv": "Klasiskās skropstas" }, "time": "2–2.5h", "price": 45, "popular": true, "excerpt": { "lv": "Dabisks, elegants izskats." } },
-          { "name": { "lv": "Hibrīdā skropstu pieaudzēšana" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Balanss starp klasiku un apjomu." } },
-          { "name": { "lv": "Apjoma skropstas" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Dramatisks un pamanāms efekts." } },
-          { "name": { "lv": "Mega apjoma skropstas" }, "time": "3–3.5h", "price": 55, "excerpt": { "lv": "Maksimāls blīvums svētkiem." } },
-          { "name": { "lv": "Skropstu pacēlums" }, "time": "1.5h", "price": 35, "excerpt": { "lv": "Dabisks pacēlums bez pieaudzēšanas." } },
-          { "name": { "lv": "Papildināšana" }, "time": "1.5–2h", "price": 30, "excerpt": { "lv": "Perfektas līnijas ikdienai." } }
+          { "name": { "lv": "Klasiskās skropstas" }, "time": "2–2.5h", "price": 45, "popular": true, "excerpt": { "lv": "Dabisks, elegants izskats." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Hibrīdā skropstu pieaudzēšana" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Balanss starp klasiku un apjomu." }, "image": "/images/services/hibirida-3x2.jpg" },
+          { "name": { "lv": "Apjoma skropstas" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Dramatisks un pamanāms efekts." }, "image": "/images/services/apjoma-3x2.jpg" },
+          { "name": { "lv": "Mega apjoma skropstas" }, "time": "3–3.5h", "price": 55, "excerpt": { "lv": "Maksimāls blīvums svētkiem." }, "image": "/images/services/mega-apjoma-3x2.jpg" },
+          { "name": { "lv": "Skropstu pacēlums" }, "time": "1.5h", "price": 35, "excerpt": { "lv": "Dabisks pacēlums bez pieaudzēšanas." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Papildināšana" }, "time": "1.5–2h", "price": 30, "excerpt": { "lv": "Perfektas līnijas ikdienai." }, "image": "/images/services/apjoma-3x2.jpg" }
         ]
       },
       {
         "slug": "uzacis",
         "label": { "lv": "Uzacis" },
         "items": [
-          { "name": { "lv": "Laminēšana" }, "time": "1–1.5h", "price": 35, "excerpt": { "lv": "Kārtīgas, viegli ieveidojamas uzacis." } },
-          { "name": { "lv": "Krāsošana & formēšana" }, "time": "45min", "price": 20, "excerpt": { "lv": "Tonēšana un precīza forma." } }
+          { "name": { "lv": "Laminēšana" }, "time": "1–1.5h", "price": 35, "excerpt": { "lv": "Kārtīgas, viegli ieveidojamas uzacis." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Krāsošana & formēšana" }, "time": "45min", "price": 20, "excerpt": { "lv": "Tonēšana un precīza forma." }, "image": "/images/services/hibirida-3x2.jpg" }
         ]
       }
     ],

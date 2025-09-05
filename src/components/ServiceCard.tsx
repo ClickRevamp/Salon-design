@@ -41,21 +41,21 @@ export default function ServiceCard({
       variants={cardVariant}
       className={className}
     >
-      <Card className="h-full relative overflow-hidden border border-mauve/20 hover:border-gold/30 hover:shadow-card transition-all duration-300 group">
+      <Card className="h-full relative overflow-hidden bg-[var(--surface)] border border-black/5 shadow-[0_8px_24px_rgba(26,26,26,0.06)] ring-1 ring-black/5 hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)] transition-all duration-200 group rounded-xl">
         {isPopular && (
           <div className="absolute top-4 right-4 z-10">
-            <Badge className="bg-gold text-white">
+            <Badge className="bg-[var(--accent)] text-[var(--ink)] border-none">
               Populārs
             </Badge>
           </div>
         )}
         
         <CardHeader className="pb-4">
-          <CardTitle className="font-serif text-xl font-semibold text-brand-text group-hover:text-gold transition-colors">
+          <CardTitle className="font-bold tracking-tight text-[var(--ink)] group-hover:text-[var(--mocha)] transition-colors" style={{ fontSize: 'clamp(18px, 2vw, 22px)' }}>
             {title}
           </CardTitle>
           {description && (
-            <CardDescription className="text-brand-text/70 leading-relaxed">
+            <CardDescription className="text-[var(--subtle)] leading-relaxed mt-1">
               {description}
             </CardDescription>
           )}
@@ -64,11 +64,11 @@ export default function ServiceCard({
         <CardContent className="pt-0 flex flex-col h-full">
           <div className="flex-grow">
             <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center text-sm text-brand-text/60">
+              <div className="flex items-center text-sm text-[var(--subtle)]">
                 <Clock className="w-4 h-4 mr-1.5" />
                 <span>{duration}</span>
               </div>
-              <div className="flex items-center text-lg font-semibold text-brand-text">
+              <div className="flex items-center text-lg font-semibold text-[var(--ink)]">
                 <Euro className="w-4 h-4 mr-1" />
                 <span>{price}</span>
               </div>
@@ -77,7 +77,7 @@ export default function ServiceCard({
           
           <Button 
             asChild
-            className="w-full rounded-full bg-gold hover:bg-gold/90 text-white font-medium"
+            className="w-full rounded-full bg-[var(--accent)] hover:bg-[var(--accent)]/90 text-[var(--ink)] font-medium border border-black/5 hover:shadow-sm transition-all duration-200"
           >
             <Link href={bookingUrl}>
               Rezervēt

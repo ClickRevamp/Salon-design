@@ -42,10 +42,17 @@
     }
   },
 
-  "mood": {
-    "eyebrow": { "lv": "Jūsu skaistums un panākumi" },
-    "headline": { "lv": "Sākas šeit!" },
-    "sub": { "lv": "Revitalizējiet ādu, atklājiet savu potenciālu un izbaudiet estētisku vidi." }
+  "moodboard": {
+    "headline": { "lv": "Iedvesma sākas šeit" },
+    "sub": { "lv": "Skats mūsu studijā — atmosfēra, process un rezultāts. Vizualizācijas 'moodboard', lai uzreiz sajustu, ko sagaidīt." },
+    "left": {
+      "caption": { "lv": "Studijas noskaņa" },
+      "supporting": { "lv": "Tīra estētika, mierīga vide un pievēršanās detaļām." }
+    },
+    "right": {
+      "title": { "lv": "Atklājiet savu skaistuma potenciālu" },
+      "kicker": { "lv": "Sterila vide, profesionāla pieeja un elegants rezultāts." }
+    }
   },
 
   "badges": [

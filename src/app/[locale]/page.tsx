@@ -5,7 +5,7 @@ import type { CSSProperties } from 'react';
 
 // ✅ JSON content + theme (from src/ai via @/*)
 import theme from '@/ai/theme.json';
-import home from '@/ai/homepage.json';
+// import home from '@/ai/homepage.json'; // Not needed anymore, using serviceCategories
 
 // Existing components
 import Hero from '@/components/Hero';
@@ -13,43 +13,25 @@ import MoodBoard from '@/components/MoodBoard';
 import TrustBar from '@/components/TrustBar';
 import CTABand from '@/components/CTABand';
 import ServicesGrid from '@/components/ServicesGrid';
-import Container from '@/components/Container';
-import Section from '@/components/Section';
+import { serviceCategories } from '@/data/services';
+// import Container from '@/components/Container';
+// import Section from '@/components/Section';
 
 export default function Home() {
   const t = useTranslations('pages.home');
 
-  // Map JSON -> ServicesGrid-friendly shape
-  const categoriesFromJson = (home.services.tabs as any[]).map((tab) => ({
-    id: tab.slug,
-    slug: tab.slug,
-    title: tab.label?.lv, // keep both title & name for compatibility
-    name: tab.label?.lv,
-    services: (tab.items as any[]).map((s) => ({
-      id: (s.name?.lv || '').toLowerCase().replace(/\s+/g, '-'),
-      title: s.name?.lv,
-      name: s.name?.lv,
-      description: s.excerpt?.lv ?? '',
-      duration: s.time,
-      time: s.time,
-      price: s.price,
-      isPopular: Boolean(s.popular),
-      popular: Boolean(s.popular),
-      excerpt: s.excerpt?.lv ?? '',
-      image: s.image
-    }))
-  }));
+  // Using serviceCategories directly from data/services.ts
 
   // Expose theme colors as CSS custom props
   const cssVars: CSSProperties = {
-    ['--bg' as any]:   (theme as any).colors.bg,
-    ['--surface' as any]: (theme as any).colors.surface,
-    ['--ink' as any]:  (theme as any).colors.ink,
-    ['--subtle' as any]: (theme as any).colors.subtle,
-    ['--accent' as any]: (theme as any).colors.accent,
-    ['--blush' as any]:  (theme as any).colors.blush,
-    ['--mocha' as any]:  (theme as any).colors.mocha
-  };
+    '--bg': (theme as { colors: { bg: string } }).colors.bg,
+    '--surface': (theme as { colors: { surface: string } }).colors.surface,
+    '--ink': (theme as { colors: { ink: string } }).colors.ink,
+    '--subtle': (theme as { colors: { subtle: string } }).colors.subtle,
+    '--accent': (theme as { colors: { accent: string } }).colors.accent,
+    '--blush': (theme as { colors: { blush: string } }).colors.blush,
+    '--mocha': (theme as { colors: { mocha: string } }).colors.mocha
+  } as CSSProperties;
 
   return (
     <div style={cssVars}>
@@ -81,10 +63,7 @@ export default function Home() {
           </div>
 
           <ServicesGrid
-            categories={categoriesFromJson.map((cat) => ({
-              ...cat,
-              services: cat.services.slice(0, 3) // preview 3 items per tab
-            }))}
+            categories={serviceCategories}
             defaultCategory="skropstas"
           />
         </div>

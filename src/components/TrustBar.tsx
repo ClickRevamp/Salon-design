@@ -2,8 +2,8 @@
 
 import { motion } from 'framer-motion';
 import { Shield, Award, MapPin, Star } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
-import homepageData from '@/ai/homepage.json';
+// import { Badge } from '@/components/ui/badge';
+// import homepageData from '@/ai/homepage.json';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -47,12 +47,12 @@ const staggerContainer = {
 };
 
 // Icon mapping for homepage.json
-const iconMap = {
-  Shield,
-  BadgeCheck: Award,
-  MapPin,
-  Star
-};
+// const iconMap = {
+//   Shield,
+//   BadgeCheck: Award,
+//   MapPin,
+//   Star
+// };
 
 // Simplified trust badges with new Latvian titles
 const trustBadges = [

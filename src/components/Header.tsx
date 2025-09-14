@@ -6,6 +6,7 @@ import { useRouter, usePathname } from 'next/navigation';
 import { useLocale } from 'next-intl';
 import { Menu, X, Globe } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import NavHashLink from '@/components/NavHashLink';
 import homepageData from '@/ai/homepage.json';
 
 // Type for homepage JSON structure (for future use)
@@ -138,16 +139,33 @@ export default function Header() {
 
           {/* Center: Nav (text links, no pills) */}
           <nav className="hidden md:flex justify-center items-center gap-4 lg:gap-6">
-            {homepageData.header.nav.map((item, index) => (
-              <Link
-                key={index}
-                href={item.href}
-                className="nav-link"
-                data-active={isActive(item.href)}
-              >
-                {item.lv}
-              </Link>
-            ))}
+            {homepageData.header.nav.map((item, index) => {
+              // Use NavHashLink for Services to enable smooth scrolling
+              if (item.lv === 'Pakalpojumi') {
+                return (
+                  <NavHashLink
+                    key={index}
+                    href="/"
+                    anchor="services"
+                    className="nav-link"
+                    data-active={isActive('/')}
+                  >
+                    {item.lv}
+                  </NavHashLink>
+                );
+              }
+              
+              return (
+                <Link
+                  key={index}
+                  href={item.href}
+                  className="nav-link"
+                  data-active={isActive(item.href)}
+                >
+                  {item.lv}
+                </Link>
+              );
+            })}
           </nav>
 
           {/* Right: Actions */}
@@ -242,17 +260,35 @@ export default function Header() {
 
                   {/* Navigation */}
                   <nav className="flex-1 space-y-1">
-                    {homepageData.header.nav.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={item.href}
-                        className="nav-link block px-3 py-2 rounded-md"
-                        data-active={isActive(item.href)}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.lv}
-                      </Link>
-                    ))}
+                    {homepageData.header.nav.map((item, index) => {
+                      // Use NavHashLink for Services to enable smooth scrolling
+                      if (item.lv === 'Pakalpojumi') {
+                        return (
+                          <NavHashLink
+                            key={index}
+                            href="/"
+                            anchor="services"
+                            className="nav-link block px-3 py-2 rounded-md"
+                            data-active={isActive('/')}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                          >
+                            {item.lv}
+                          </NavHashLink>
+                        );
+                      }
+                      
+                      return (
+                        <Link
+                          key={index}
+                          href={item.href}
+                          className="nav-link block px-3 py-2 rounded-md"
+                          data-active={isActive(item.href)}
+                          onClick={() => setIsMobileMenuOpen(false)}
+                        >
+                          {item.lv}
+                        </Link>
+                      );
+                    })}
                   </nav>
 
                   {/* Actions */}

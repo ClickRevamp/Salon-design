@@ -3,9 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams, usePathname, useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
-import Container from '@/components/Container';
 import Section from '@/components/Section';
-import Stepper from '@/components/Stepper';
+import BookingProgress from '@/components/booking/BookingProgress';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -24,11 +23,6 @@ export default function BookingFlow() {
   const t = useTranslations('booking');
   const searchParams = useSearchParams();
   
-  const bookingSteps = [
-    { id: 'service', title: t('steps.service'), description: t('steps.serviceDesc') },
-    { id: 'master', title: t('steps.master'), description: t('steps.masterDesc') },
-    { id: 'time', title: t('steps.time'), description: t('steps.timeDesc') },
-  ];
   const pathname = usePathname();
   const router = useRouter();
   
@@ -66,18 +60,11 @@ export default function BookingFlow() {
     router.replace(newUrl);
   }, [selectedService, selectedMaster, pathname, router, searchParams]);
 
-  // Determine current step and completed steps
-  const getCurrentStep = () => {
-    if (!selectedService) return 'service';
-    if (!selectedMaster) return 'master';
-    return 'time';
-  };
-
-  const getCompletedSteps = () => {
-    const completed = [];
-    if (selectedService) completed.push('service');
-    if (selectedMaster) completed.push('master');
-    return completed;
+  // Determine current step for progress bar (1, 2, or 3)
+  const getCurrentStepNumber = (): 1 | 2 | 3 => {
+    if (!selectedService) return 1;
+    if (!selectedMaster) return 2;
+    return 3;
   };
 
   const selectedServiceData = allServices.find(s => s.id === selectedService);
@@ -98,29 +85,34 @@ export default function BookingFlow() {
 
   return (
     <div>
-      {/* Hero Section */}
-      <Section spacing="xl" className="bg-gradient-to-br from-blush/20 via-transparent to-mauve/20">
-        <Container>
-          <div className="text-center max-w-3xl mx-auto">
-            <h1 className="font-serif text-4xl md:text-5xl font-bold text-brand-text mb-6">
-              {t('steps.title')}
-            </h1>
-            <p className="text-xl text-brand-text/70 leading-relaxed">
-              {t('steps.description')}
-            </p>
+              {/* Hero Section */}
+        <Section spacing="xl" className="bg-gradient-to-br from-blush/20 via-transparent to-mauve/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-2xl mx-auto">
+              <h1
+                className="font-extrabold tracking-tight text-[var(--ink)] leading-tight"
+                style={{ fontSize: 'clamp(28px, 3.6vw, 40px)' }}
+              >
+                {t('steps.title')}
+              </h1>
+              <p
+                className="mt-2 text-neutral-600/80 leading-relaxed"
+                style={{ fontSize: 'clamp(14px, 1.8vw, 18px)' }}
+              >
+                {t('steps.description')}
+              </p>
+            </div>
           </div>
-        </Container>
-      </Section>
+        </Section>
 
       {/* Booking Flow */}
       <Section spacing="xl" className="bg-white">
-        <Container>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            {/* Stepper */}
-            <Stepper 
-              steps={bookingSteps}
-              currentStep={getCurrentStep()}
-              completedSteps={getCompletedSteps()}
+            {/* Progress Bar */}
+            <BookingProgress 
+              currentStep={getCurrentStepNumber()}
+              totalSteps={3}
               className="mb-12"
             />
 
@@ -129,7 +121,10 @@ export default function BookingFlow() {
               {/* Service Selection */}
               <Card className="border-mauve/20">
                 <CardHeader>
-                  <CardTitle className="font-serif text-xl text-brand-text">
+                  <CardTitle
+                    className="font-semibold text-neutral-800"
+                    style={{ fontSize: 'clamp(15px, 1.6vw, 18px)' }}
+                  >
                     {t('form.selectService')}
                   </CardTitle>
                 </CardHeader>
@@ -182,7 +177,10 @@ export default function BookingFlow() {
               {/* Master Selection */}
               <Card className={`border-mauve/20 ${!selectedService ? 'opacity-50' : ''}`}>
                 <CardHeader>
-                  <CardTitle className="font-serif text-xl text-brand-text">
+                  <CardTitle
+                    className="font-semibold text-neutral-800"
+                    style={{ fontSize: 'clamp(15px, 1.6vw, 18px)' }}
+                  >
                     {t('form.selectMaster')}
                   </CardTitle>
                 </CardHeader>
@@ -227,7 +225,10 @@ export default function BookingFlow() {
               {showBookingEmbed && (
                 <Card className="border-gold/30">
                   <CardHeader>
-                                      <CardTitle className="font-serif text-xl text-brand-text">
+                  <CardTitle
+                    className="font-semibold text-neutral-800"
+                    style={{ fontSize: 'clamp(15px, 1.6vw, 18px)' }}
+                  >
                     {t('form.selectTime')}
                   </CardTitle>
                   </CardHeader>
@@ -261,17 +262,20 @@ export default function BookingFlow() {
               )}
             </div>
           </div>
-        </Container>
+        </div>
       </Section>
 
       {/* Policy Summary */}
       {showBookingEmbed && (
         <Section spacing="lg" className="bg-porcelain">
-          <Container>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <Card className="border-mauve/20">
                 <CardHeader>
-                  <CardTitle className="font-serif text-lg text-brand-text">
+                  <CardTitle
+                    className="font-semibold text-neutral-800"
+                    style={{ fontSize: 'clamp(15px, 1.6vw, 18px)' }}
+                  >
                     {t('form.policies')}
                   </CardTitle>
                 </CardHeader>
@@ -318,7 +322,7 @@ export default function BookingFlow() {
                 </a>
               </div>
             </div>
-          </Container>
+          </div>
         </Section>
       )}
     </div>

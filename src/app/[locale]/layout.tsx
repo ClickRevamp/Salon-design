@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
+import IntlProviderClient from '@/components/i18n/IntlProviderClient';
 import { Fraunces, Manrope, Plus_Jakarta_Sans } from "next/font/google";
 import { Toaster } from 'sonner';
 import { defaultMetadata, viewport } from '@/seo.config';
@@ -47,7 +47,10 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${fraunces.variable} ${manrope.variable} ${display.variable}`}>
       <body className="font-sans antialiased">
-        <NextIntlClientProvider locale={locale} messages={messages}>
+        <IntlProviderClient 
+          locale={locale} 
+          messages={messages}
+        >
           <div className="flex min-h-screen flex-col">
             <Header />
             <main className="flex-1">
@@ -65,7 +68,7 @@ export default async function LocaleLayout({
               },
             }}
           />
-        </NextIntlClientProvider>
+        </IntlProviderClient>
       </body>
     </html>
   );

@@ -1,7 +1,6 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import type { CSSProperties } from 'react';
 
 // ✅ JSON content + theme (from src/ai via @/*)
 import theme from '@/ai/theme.json';
@@ -13,19 +12,17 @@ import MoodBoard from '@/components/MoodBoard';
 import TrustBar from '@/components/TrustBar';
 import CTABand from '@/components/CTABand';
 import ServicesGrid from '@/components/ServicesGrid';
-import Container from '@/components/Container';
-import Section from '@/components/Section';
 
 export default function Home() {
   const t = useTranslations('pages.home');
 
   // Map JSON -> ServicesGrid-friendly shape
-  const categoriesFromJson = (home.services.tabs as any[]).map((tab) => ({
+  const categoriesFromJson = (home.services.tabs).map((tab) => ({
     id: tab.slug,
     slug: tab.slug,
     title: tab.label?.lv, // keep both title & name for compatibility
     name: tab.label?.lv,
-    services: (tab.items as any[]).map((s) => ({
+    services: (tab.items).map((s) => ({
       id: (s.name?.lv || '').toLowerCase().replace(/\s+/g, '-'),
       title: s.name?.lv,
       name: s.name?.lv,
@@ -41,14 +38,14 @@ export default function Home() {
   }));
 
   // Expose theme colors as CSS custom props
-  const cssVars: CSSProperties = {
-    ['--bg' as any]:   (theme as any).colors.bg,
-    ['--surface' as any]: (theme as any).colors.surface,
-    ['--ink' as any]:  (theme as any).colors.ink,
-    ['--subtle' as any]: (theme as any).colors.subtle,
-    ['--accent' as any]: (theme as any).colors.accent,
-    ['--blush' as any]:  (theme as any).colors.blush,
-    ['--mocha' as any]:  (theme as any).colors.mocha
+  const cssVars: Record<string, string> = {
+    '--bg': theme.colors.bg,
+    '--surface': theme.colors.surface,
+    '--ink': theme.colors.ink,
+    '--subtle': theme.colors.subtle,
+    '--accent': theme.colors.accent,
+    '--blush': theme.colors.blush,
+    '--mocha': theme.colors.mocha
   };
 
   return (
@@ -59,7 +56,7 @@ export default function Home() {
       <MoodBoard />
 
       {/* Services Preview — unified with Hero/Moodboard design */}
-      <section className="bg-transparent pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-18 lg:pb-18">
+      <section id="services" className="bg-transparent pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-18 lg:pb-18">
         {/* Centered container with consistent max-width */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -81,10 +78,7 @@ export default function Home() {
           </div>
 
           <ServicesGrid
-            categories={categoriesFromJson.map((cat) => ({
-              ...cat,
-              services: cat.services.slice(0, 3) // preview 3 items per tab
-            }))}
+            categories={categoriesFromJson}
             defaultCategory="skropstas"
           />
         </div>

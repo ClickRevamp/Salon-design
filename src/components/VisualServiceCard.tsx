@@ -40,15 +40,21 @@ export default function VisualServiceCard({
   const [imageError, setImageError] = useState(false);
   const bookingUrl = bookingId ? `/rezervacija?service=${bookingId}` : '/rezervacija';
 
-  // Format price to show Euro symbol
-  const formattedPrice = typeof price === 'number' ? `€${price}` : price;
+
+  // Format price for display and aria-label
+  const displayPrice = typeof price === 'number' ? `€${price}` : price;
+  const ariaLabel = `${title} — ${displayPrice}, ${duration}`;
 
   return (
     <motion.div
       variants={cardVariant}
       className={className}
     >
-      <Link href={bookingUrl} className="block group">
+      <Link 
+        href={bookingUrl} 
+        className="block group"
+        aria-label={ariaLabel}
+      >
         <div className="relative overflow-hidden rounded-xl shadow-[0_8px_24px_rgba(26,26,26,0.06)] hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)] transition-all duration-300 hover:scale-[1.01] bg-[var(--surface)]"
           style={{
             // Responsive heights: ~2.1x taller than original
@@ -60,7 +66,7 @@ export default function VisualServiceCard({
             {image && !imageError ? (
               <Image
                 src={image}
-                alt={`${title} - hibrīdā pieaudzēšana, dabisks + apjoma efekts`}
+                alt={`${title} — tuvplāns, skropstu/uzacu efekts`}
                 fill
                 className={`object-cover object-center transition-opacity duration-300 ${
                   imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -97,7 +103,7 @@ export default function VisualServiceCard({
           <div 
             className="absolute inset-0"
             style={{
-              background: 'linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.74) 8%, rgba(0,0,0,0.60) 18%, rgba(0,0,0,0.38) 34%, rgba(0,0,0,0.18) 50%, rgba(0,0,0,0.08) 60%, rgba(0,0,0,0.00) 72%)',
+              background: 'linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.28) 30%, rgba(0,0,0,0.12) 55%, rgba(0,0,0,0.00) 80%)',
               pointerEvents: 'none',
               zIndex: 2
             }}

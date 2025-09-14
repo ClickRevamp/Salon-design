@@ -8,13 +8,13 @@
     "announcement": {
       "enabled": true,
       "text": { "lv": "ĪPAŠAIS PIEDĀVĀJUMS: 1+1=1 šonedēļ!" },
-      "href": "/pakalpojumi",
+      "href": "/cenas",
       "dismissKey": "promo-1plus1"
     },
     "nav": [
       { "lv": "Sākums", "href": "/" },
       { "lv": "Par mums", "href": "/par-mums" },
-      { "lv": "Pakalpojumi", "href": "/pakalpojumi" },
+      { "lv": "Pakalpojumi", "href": "/cenas" },
       { "lv": "Pieraksts", "href": "/rezervacija" },
       { "lv": "Kontakti", "href": "/kontakti" }
     ],
@@ -68,12 +68,19 @@
         "slug": "skropstas",
         "label": { "lv": "Skropstas" },
         "items": [
-          { "name": { "lv": "Klasiskās skropstas" }, "time": "2–2.5h", "price": 45, "popular": true, "excerpt": { "lv": "Dabisks, elegants izskats." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Klasiskā skropstu pieaudzēšana" }, "time": "2–2.5h", "price": 45, "popular": true, "excerpt": { "lv": "Dabisks, elegants izskats." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Slapjā efekta skropstu pieaudzēšana" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Mitruma efekts, spīdīgs rezultāts." }, "image": "/images/services/slapja-efekta-3x2.jpg" },
           { "name": { "lv": "Hibrīdā skropstu pieaudzēšana" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Balanss starp klasiku un apjomu." }, "image": "/images/services/hibirida-3x2.jpg" },
-          { "name": { "lv": "Apjoma skropstas" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Dramatisks un pamanāms efekts." }, "image": "/images/services/apjoma-3x2.jpg" },
-          { "name": { "lv": "Mega apjoma skropstas" }, "time": "3–3.5h", "price": 55, "excerpt": { "lv": "Maksimāls blīvums svētkiem." }, "image": "/images/services/mega-apjoma-3x2.jpg" },
-          { "name": { "lv": "Skropstu pacēlums" }, "time": "1.5h", "price": 35, "excerpt": { "lv": "Dabisks pacēlums bez pieaudzēšanas." }, "image": "/images/services/klasiska-3x2.jpg" },
-          { "name": { "lv": "Papildināšana" }, "time": "1.5–2h", "price": 30, "excerpt": { "lv": "Perfektas līnijas ikdienai." }, "image": "/images/services/apjoma-3x2.jpg" }
+          { "name": { "lv": "Apjoma skropstu pieaudzēšana" }, "time": "2.5–3h", "price": 50, "excerpt": { "lv": "Dramatisks un pamanāms efekts." }, "image": "/images/services/apjoma-3x2.jpg" },
+          { "name": { "lv": "Mega apjoma skropstu pieaudzēšana" }, "time": "3–3.5h", "price": 55, "excerpt": { "lv": "Maksimāls blīvums svētkiem." }, "image": "/images/services/mega-apjoma-3x2.jpg" },
+          { "name": { "lv": "Tikai skropstu noņemšana (bez pieaudzēšanas)" }, "time": "15–30min", "price": 5, "excerpt": { "lv": "Drošs noņemšanas process." }, "image": "/images/services/nonemsana-3x2.jpg" },
+          { "name": { "lv": "Skropstu noņemšana, ja tās pieaudzētas pie cita meistara" }, "time": "30–45min", "price": "5–10", "excerpt": { "lv": "Rūpīga noņemšana ar īpašu aprūpi." }, "image": "/images/services/nonemsana-cits-3x2.jpg" },
+          { "name": { "lv": "Klasisko skropstu uzpilde" }, "time": "1–1.5h", "price": 35, "excerpt": { "lv": "Atjauno dabisko skaistumu." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Slapjā efekta skropstu uzpilde" }, "time": "1–1.5h", "price": 40, "excerpt": { "lv": "Atjauno mitruma efektu." }, "image": "/images/services/slapja-efekta-3x2.jpg" },
+          { "name": { "lv": "Hibrīdā efekta skropstu uzpilde" }, "time": "1–1.5h", "price": 40, "excerpt": { "lv": "Perfekts balanss atjaunots." }, "image": "/images/services/hibirida-3x2.jpg" },
+          { "name": { "lv": "Apjoma skropstu uzpilde" }, "time": "1–2h", "price": 40, "excerpt": { "lv": "Atjauno dramatisko efektu." }, "image": "/images/services/apjoma-3x2.jpg" },
+          { "name": { "lv": "Mega apjoma skropstu uzpilde" }, "time": "1–2h", "price": 45, "excerpt": { "lv": "Maksimāls blīvums atjaunots." }, "image": "/images/services/mega-apjoma-3x2.jpg" },
+          { "name": { "lv": "Skropstu laminēšana/krāsošana" }, "time": "1–1.5h", "price": 45, "excerpt": { "lv": "Dabisks pacēlums ar krāsu." }, "image": "/images/services/klasiska-3x2.jpg" }
         ]
       },
       {
@@ -81,11 +88,15 @@
         "label": { "lv": "Uzacis" },
         "items": [
           { "name": { "lv": "Laminēšana" }, "time": "1–1.5h", "price": 35, "excerpt": { "lv": "Kārtīgas, viegli ieveidojamas uzacis." }, "image": "/images/services/klasiska-3x2.jpg" },
-          { "name": { "lv": "Krāsošana & formēšana" }, "time": "45min", "price": 20, "excerpt": { "lv": "Tonēšana un precīza forma." }, "image": "/images/services/hibirida-3x2.jpg" }
+          { "name": { "lv": "Krāsošana & formēšana" }, "time": "45min", "price": 20, "excerpt": { "lv": "Tonēšana un precīza forma." }, "image": "/images/services/hibirida-3x2.jpg" },
+          { "name": { "lv": "Uzacu laminēšana/krāsošana/korekcija" }, "time": "1–1.5h", "price": 40, "excerpt": { "lv": "Pilnīgs uzacu komplekss." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Uzacu laminēšana/korekcija" }, "time": "1–1.5h", "price": 35, "excerpt": { "lv": "Forma un laminēšana." }, "image": "/images/services/klasiska-3x2.jpg" },
+          { "name": { "lv": "Uzacu korekcija/krāsošana" }, "time": "45–60min", "price": 30, "excerpt": { "lv": "Forma ar krāsas akcentu." }, "image": "/images/services/hibirida-3x2.jpg" },
+          { "name": { "lv": "Uzacu/Skropstu laminēšanas komplekss" }, "time": "2–2.5h", "price": 75, "excerpt": { "lv": "Pilnīgs skaistuma komplekss." }, "image": "/images/services/klasiska-3x2.jpg" }
         ]
       }
     ],
-    "cta": { "lv": "Apskatīt pilnu cenrādi", "href": "/pakalpojumi" }
+    "cta": { "lv": "Apskatīt pilnu cenrādi", "href": "/cenas" }
   },
 
   "signatureBanner": {

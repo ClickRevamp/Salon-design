@@ -36,6 +36,16 @@ const renderHeadline = (text: string) => {
 export default function Hero() {
   const { hero } = homepageData;
 
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services');
+    if (servicesSection) {
+      servicesSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
   return (
     <section 
       className="relative isolate overflow-hidden mx-3 sm:mx-4 md:mx-6 lg:mx-8 mb-0 rounded-b-[48px] md:rounded-b-[56px] border border-black/5 shadow-[var(--shadow-elevated,0_12px_48px_rgba(26,26,26,.08))] min-h-[70vh] md:min-h-[72vh] pt-[calc(var(--header-h,72px)+24px)] md:pt-[calc(var(--header-h,72px)+40px)]"
@@ -91,13 +101,13 @@ export default function Hero() {
               >
                 {hero.primaryCta.lv}
               </Link>
-              <Link 
-                href={hero.secondaryCta.href}
+              <button 
+                onClick={scrollToServices}
                 className="btn-ghost text-center"
                 aria-label={`${hero.secondaryCta.lv} - Uzzināt vairāk par mūsu pakalpojumiem`}
               >
                 {hero.secondaryCta.lv}
-              </Link>
+              </button>
             </motion.div>
 
             {/* Trust Chips */}

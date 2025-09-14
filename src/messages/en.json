@@ -83,10 +83,19 @@
       "description": "We are a team of professional beauty specialists specializing in premium lash extensions and brow shaping in the heart of Riga."
     },
     "services": {
-      "title": "Services & Prices",
+      "title": "Our Services",
+      "subtitle": "Professional beauty services with a personalized approach to each client.",
       "description": "Explore our full range of services and prices. Professional approach to each client.",
       "comingSoon": "Services in this category will be added soon.",
-      "policies": "• Bookings can be cancelled free of charge up to 24 hours before the visit"
+      "policies": "• Bookings can be cancelled free of charge up to 24 hours before the visit",
+      "tabs": {
+        "lashes": "Lashes",
+        "brows": "Brows"
+      },
+      "carousel": {
+        "prev": "Previous",
+        "next": "Next"
+      }
     },
     "contact": {
       "title": "Contact",

@@ -17,6 +17,12 @@
   "contact": {
     "title": "Sazināties ar mums",
     "description": "Uzdodiet jautājumu vai piesakieties konsultācijai",
+    "responseTime": "Mēs atbildēsim 24 stundu laikā",
+    "address": "Adrese",
+    "phone": "Telefons",
+    "email": "E-pasts",
+    "hours": "Darba laiks",
+    "follow": "Sekojiet mums",
     "form": {
       "name": "Vārds",
       "namePlaceholder": "Jūsu vārds",
@@ -139,6 +145,36 @@
       "hygieneDesc": "Sterilizēti instrumenti",
       "callOption": "Vai labāk zvanīt? Mēs labprāt palīdzēsim!",
       "trafftPlaceholder": "Trafft kalendārs tiks ielādēts šeit"
+    }
+  },
+  "pages": {
+    "home": {
+      "servicesTitle": "Mūsu pakalpojumi",
+      "servicesDescription": "Profesionāli skaistumkopšanas pakalpojumi ar individuālu pieeju katram klientam."
+    },
+    "about": {
+      "title": "Par mums",
+      "description": "Uzziniet vairāk par Lash Bloom Studio un mūsu pieeju skaistuma aprūpei"
+    },
+    "services": {
+      "title": "Mūsu pakalpojumi",
+      "subtitle": "Profesionāli skaistumkopšanas pakalpojumi ar individuālu pieeju katram klientam.",
+      "comingSoon": "Pakalpojumi šajā kategorijā tiks pievienoti drīzumā.",
+      "tabs": {
+        "lashes": "Skropstas",
+        "brows": "Uzacis"
+      },
+      "carousel": {
+        "prev": "Iepriekšējais",
+        "next": "Nākamais"
+      }
+    },
+    "contact": {
+      "title": "Kontakti",
+      "description": "Sazināties ar mums un apmeklēt mūsu studiju Rīgas centrā",
+      "getInTouch": "Sazināties ar mums",
+      "mapPlaceholder": "Interaktīvā karte tiks pievienota drīzumā",
+      "sendMessage": "Sūtīt ziņojumu"
     }
   }
 }

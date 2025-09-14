@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import homepageData from '@/ai/homepage.json';
 
 export default function MoodBoard() {
@@ -37,9 +38,18 @@ export default function MoodBoard() {
           {/* Left — landscape (with caption below) */}
           <div className="col-span-12 md:col-span-6 lg:col-span-5">
             <div 
-              className="w-full rounded-xl bg-[var(--blush)]/45 shadow-[0_8px_24px_rgba(26,26,26,0.06)] ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)]" 
+              className="relative w-full overflow-hidden rounded-xl shadow-[0_8px_24px_rgba(26,26,26,0.06)] ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)]" 
               style={{ height: 'clamp(300px, 24vw, 340px)' }}
-            />
+            >
+              <Image
+                src="/images/moodboard/salon_1.jpg"
+                alt="Studijas noskaņa - tīra estētika un mierīga vide"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 42vw, (min-width: 768px) 50vw, 100vw"
+              />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/35 to-transparent" />
+            </div>
             <div className="mt-4">
               <p className="font-medium text-[var(--ink)]" style={{ fontSize: 'clamp(16px, 1.6vw, 18px)' }}>
                 {moodboard.left.caption.lv}
@@ -53,9 +63,18 @@ export default function MoodBoard() {
           {/* Center — tall portrait (no caption) */}
           <div className="col-span-12 md:col-span-6 lg:col-span-3">
             <div 
-              className="w-full rounded-xl bg-[var(--accent)]/40 shadow-[0_8px_24px_rgba(26,26,26,0.06)] ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)]" 
+              className="relative w-full overflow-hidden rounded-xl shadow-[0_8px_24px_rgba(26,26,26,0.06)] ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)]" 
               style={{ height: 'clamp(380px, 32vw, 440px)' }}
-            />
+            >
+              <Image
+                src="/images/moodboard/salon_2.jpg"
+                alt="Profesionāls skropstu pagarināšanas process studijā"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+              />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/35 to-transparent" />
+            </div>
           </div>
 
           {/* Right — landscape anchored to bottom (with text above) */}
@@ -72,9 +91,18 @@ export default function MoodBoard() {
               </p>
             </div>
             <div 
-              className="w-full rounded-xl bg-[var(--mocha)]/40 shadow-[0_8px_24px_rgba(26,26,26,0.06)] ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)]" 
+              className="relative w-full overflow-hidden rounded-xl shadow-[0_8px_24px_rgba(26,26,26,0.06)] ring-1 ring-black/5 transition-shadow duration-200 hover:shadow-[0_12px_32px_rgba(26,26,26,0.08)]" 
               style={{ height: 'clamp(260px, 22vw, 300px)' }}
-            />
+            >
+              <Image
+                src="/images/moodboard/salon_3.jpg"
+                alt="Elegants rezultāts - profesionāli pagarinātas skropstas"
+                fill
+                className="object-cover"
+                sizes="(min-width: 1024px) 33vw, 100vw"
+              />
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-black/35 to-transparent" />
+            </div>
           </div>
         </div>
       </div>

@@ -21,10 +21,16 @@ export default function CTABand() {
           transition={{ duration: 0.24, ease: "easeOut" }}
         >
           <div className="text-center lg:text-left">
-            <h2 className="font-serif text-2xl lg:text-3xl font-bold text-brand-text mb-2">
+            <h2 
+              className="font-extrabold tracking-tight text-[var(--ink)] leading-tight mb-2"
+              style={{ fontSize: 'clamp(28px, 3.6vw, 36px)' }}
+            >
               {t('title')}
             </h2>
-            <p className="text-brand-text/70 text-lg">
+            <p 
+              className="font-medium leading-relaxed text-[var(--subtle)]"
+              style={{ fontSize: 'clamp(16px, 1.8vw, 18px)' }}
+            >
               {t('subtitle')}
             </p>
           </div>
